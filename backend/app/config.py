@@ -63,9 +63,14 @@ class Settings(BaseSettings):
     # ------------------------------------------------------------------
     # Persistence
     # ------------------------------------------------------------------
-    database_url: str = "postgresql+asyncpg://ragops:ragops@localhost:5432/ragops"
+    # The host port here must match the port docker-compose.yml *publishes*,
+    # which is `PG_PORT` (default 55432), not the container's internal 5432.
+    # A mismatch here does not fail loudly -- Alembic reports a connection
+    # refusal and the app reports `degraded` -- so it is stated twice rather
+    # than left implicit. Override PG_PORT only if you also override these.
+    database_url: str = "postgresql+asyncpg://ragops:ragops@localhost:55432/ragops"
     database_sync_url: str = (
-        "postgresql+psycopg2://ragops:ragops@localhost:5432/ragops"
+        "postgresql+psycopg2://ragops:ragops@localhost:55432/ragops"
     )
     db_pool_size: int = 10
     db_max_overflow: int = 20

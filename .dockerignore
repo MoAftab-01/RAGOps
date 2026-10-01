@@ -1,0 +1,64 @@
+# docker-compose.yml builds with `context: .`, which sends the entire working
+# tree to the daemon. .gitignore is irrelevant here — Docker reads this file.
+# Without it, node_modules/, .venv/ and the .actual/ baseline scratch push
+# hundreds of MB that no image needs.
+
+.git
+.github
+.gitignore
+.gitattributes
+
+# Secrets — never bake these into an image layer.
+.env
+.env.*
+!.env.example
+
+# Python
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+.mypy_cache
+*.egg-info
+.coverage
+htmlcov
+
+# Node
+node_modules
+frontend/node_modules
+frontend/dist
+*.tsbuildinfo
+npm-debug.log*
+
+# Local data
+data
+*.db
+*.sqlite3
+*.faiss
+*.npy
+*.npz
+*.pkl
+
+# Agent and workflow scratch
+.work
+.tmpwork
+.workflow-*.js
+.actual
+.baseline
+
+# Logs
+*.log
+logs
+
+# Editor / OS
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Docs are not needed to build or serve the app.
+docs
+*.md
+!sdk/python/README.md

@@ -12,7 +12,7 @@ The five, in the order they were found by driving the API with curl:
 2. ``WindowFilter(start=..., end=...)`` fabricated to carry an organization id
    through ``apply_tenant_filter`` raised ``TypeError`` on *every* call, because
    ``start`` and ``end`` are required.
-3. Four routes declared ``principal: Principal`` -- the raw Pydantic class --
+3. Four routes declared ``principal: Principal`` -- the raw dataclass --
    instead of the ``Annotated[..., Depends(current_principal)]`` alias. FastAPI
    read it as a required *body field*, so every one of them 422'd for any caller
    who did not send a ``Principal`` blob.
@@ -99,10 +99,11 @@ def _is_route_handler(node: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
 def test_no_route_declares_a_bare_principal() -> None:
     """No route may type a principal as ``Principal`` (defect 3).
 
-    ``Principal`` is a Pydantic model. Written into a route signature as
-    ``principal: Principal`` it is not an injection at all -- FastAPI reads it as
-    a required request-body field, and the endpoint then rejects every caller
-    with ``422 {"loc": ["body", "principal"], "msg": "Field required"}``.
+    ``Principal`` is a plain frozen dataclass, so FastAPI has no ``Depends`` to
+    resolve it and falls back to treating it as a request-body model. Written
+    into a route signature as ``principal: Principal`` it is not an injection at
+    all -- the endpoint rejects every caller with
+    ``422 {"loc": ["body", "principal"], "msg": "Field required"}``.
 
     The injection is ``TenantPrincipal``, defined once in ``security.py`` as
     ``Annotated[Principal, Depends(current_principal)]``. That alias is the only
@@ -139,7 +140,7 @@ def test_no_route_declares_a_bare_principal() -> None:
                     )
 
     assert not offenders, (
-        "A route types its principal as the raw `Principal` Pydantic model, which "
+        "A route types its principal as the raw `Principal` dataclass, which "
         "FastAPI treats as a required request-body field rather than an "
         "injection. Use `TenantPrincipal` from `app.api.deps`:\n"
         + "\n".join(f"  {file}:{line} in {func}()" for file, line, func in offenders)

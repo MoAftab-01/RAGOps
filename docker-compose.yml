@@ -94,7 +94,9 @@ services:
     ports:
       - "8080:80"
     environment:
-      VITE_API_BASE_URL: http://localhost:8000/api
+      # Must match the variable api.ts actually reads (src/lib/api.ts:38).
+      # VITE_API_BASE_URL was the old name and is read by nothing.
+      VITE_API_URL: http://localhost:8000/api
 
 volumes:
   postgres_data:

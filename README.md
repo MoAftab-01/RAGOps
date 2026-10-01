@@ -155,20 +155,24 @@ def answer(question: str) -> str:
         trace.log_retrieval(
             query=question,
             documents=[{"id": d.id, "text": d.text, "score": d.score} for d in docs],
-            k=5,
+            top_k=5,
         )
 
-        answer = llm.generate(question, docs)
+        prompt = build_prompt(question, docs)          # your prompt, your call
+        answer = llm.generate(prompt)
+
         trace.log_generation(
             model="llama3.1",
-            prompt_tokens=len(prompt_tokens),   # measured, never estimated by an LLM
-            completion_tokens=len(answer.split()),
-            output_text=answer,
+            input_tokens=estimate_tokens(prompt),      # plain arithmetic, never an LLM
+            output_tokens=estimate_tokens(answer),
+            answer=answer,
         )
         trace.set_output(answer)
 
     return answer
 ```
+
+`estimate_tokens` is the SDK's own counter (`from ragops.tokens import estimate_tokens`) — a string operation, not a model call. Count however your system already counts; the only rule is that the number is measured, not guessed.
 
 `client.trace(...)` is a context manager: on a clean exit the trace completes with status `success` and flushes; if the block raises, the error is recorded, the status becomes `error`, and the exception propagates unchanged.
 
@@ -183,7 +187,7 @@ curl -X POST http://localhost:8000/api/traces \
   -d '{
     "application": "customer-support-bot",
     "trace_id": "example-001",
-    "input": "How do I reset my password?"
+    "input_text": "How do I reset my password?"
   }'
 ```
 
@@ -195,13 +199,15 @@ curl -X POST http://localhost:8000/api/traces \
 
 | Page | What it shows |
 |---|---|
-| **Overview** | Total calls, tokens, cost, error rate, latency percentiles over a window |
+| **Dashboard** | Total calls, tokens, cost, error rate, latency percentiles over a window |
 | **Traces** | Every recorded request; drill into one to see its retrievals, generations, and spans |
-| **Analytics** | Cost and token trends broken down by model, application, and user |
-| **Evaluations** | Retrieval and answer evaluation runs, with per-query results |
+| **RAG Evaluation** | Retrieval and answer evaluation runs, with per-query results |
+| **Token Analytics** | Cost and token trends broken down by model, application, and user |
+| **Cost & Quality** | Cost per correct answer, and quality at each operating point |
 | **Experiments** | Multi-arm comparisons against a baseline run |
 | **Anomalies** | Statistically unusual traces, grouped by kind |
-| **Recommendations** | Evidence-backed optimization suggestions |
+| **Optimization** | Evidence-backed recommendations, with the trace that motivated each |
+| **Applications** | Registered applications and their per-app statistics |
 | **Settings** | Companies, API keys, runtime configuration |
 
 The Settings page doubles as the multi-tenancy console: create a company, mint its API key, and send telemetry that lands only in that company's data.
@@ -284,7 +290,7 @@ make test-frontend # 152 tests
 Two guards are worth knowing about, because they encode decisions rather than testing behaviour:
 
 - **`test_scoping.py`** walks the source with `ast` and fails if a bare `application_id is not None` comparison appears anywhere outside the single allowed helper. It is how "did I convert all 25 filter sites?" is answered without trusting a grep.
-- **`test_route_contracts.py`** does the same for route signatures — it fails if any route types its principal as the raw `Principal` Pydantic model instead of the dependency alias, because that silently turns an injected parameter into a required request-body field.
+- **`test_route_contracts.py`** does the same for route signatures — it fails if any route types its principal as the raw `Principal` class instead of the `TenantPrincipal` alias, because that silently turns an injected parameter into a required request-body field.
 
 ---
 
@@ -318,7 +324,7 @@ All configuration is environment variables. `.env` is git-ignored and `.env.exam
 
 | Variable | Default | What it does |
 |---|---|---|
-| `DATABASE_URL` | `postgresql+asyncpg://ragops:ragops@localhost:5432/ragops` | Database connection string |
+| `DATABASE_URL` | `postgresql+asyncpg://ragops:ragops@localhost:55432/ragops` | Database connection string. Host port is `PG_PORT`, **not** the container's internal 5432 |
 | `REDIS_URL` | `redis://localhost:6379/0` | Cache backend |
 | `RAGOPS_API_KEY` | `dev-key` | The shared platform key |
 | `AUTH_ENABLED` | `true` | Set `false` to run with no key at all while developing |
@@ -329,11 +335,11 @@ All configuration is environment variables. `.env` is git-ignored and `.env.exam
 | `ENVIRONMENT` | `development` | `development` \| `test` \| `production` |
 | `LOG_LEVEL` | `INFO` | `DEBUG` \| `INFO` \| `WARNING` \| `ERROR` |
 
-There is also an `API_KEY_PEPPER` setting in `backend/app/config.py` that is **not** in `.env.example` yet — it should be, and it is worth adding there.
+There is also an `API_KEY_PEPPER` setting in `backend/app/config.py`, documented in `.env.example`.
 
-> **Set `API_KEY_PEPPER` before deploying.** With it empty the API key hash is a plain SHA-256, which means a leaked database dump could be brute-forced offline. No startup warning currently fires for this — that is a gap worth closing.
+> **Set `API_KEY_PEPPER` before deploying.** The digest is always HMAC-SHA256, but with an empty pepper the key is an all-zero block — so anyone holding a database dump can recompute it without holding the pepper. It is still a perfectly good *identifier*; it stops being a secret-dependent value. `generate_api_key` logs a warning when the pepper is empty. Changing the pepper later invalidates every per-company key already minted.
 
-> **If you change `RAGOPS_API_KEY`, change `VITE_RAGOPS_API_KEY` too**, or the UI will get 401s.
+> **The browser does not read `RAGOPS_API_KEY`.** The dashboard holds a key in `localStorage` under `ragops.apiKey`, set from the Settings page, and sends it as `X-API-Key` on each request. Only `VITE_API_URL` is read from the frontend environment — mint the key in Settings and paste it there.
 
 ---
 

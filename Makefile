@@ -81,7 +81,7 @@ demo-data: ## Generate 10,000+ synthetic traces (never hardcoded dashboard numbe
 demo-rag: ## Run the demonstration RAG support bot end to end
 	cd evaluation && ../$(VENV)/Scripts/python.exe -m rag_demo.app --query "How do I reset my password?"
 
-demo-agent: ## Run the LangGraph multi-step agent example with loop detection
+demo-agent: ## Run the multi-step agent example (LangGraph if installed, else the built-in runner)
 	cd evaluation && ../$(VENV)/Scripts/python.exe -m agent_demo.app
 
 # -------------------------------------------------------------- verify

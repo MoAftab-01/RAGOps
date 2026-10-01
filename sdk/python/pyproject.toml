@@ -34,8 +34,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ragops/ragops"
-Repository = "https://github.com/ragops/ragops"
+Homepage = "https://github.com/MoAftab-01/RAGOps"
+Repository = "https://github.com/MoAftab-01/RAGOps"
 
 [tool.hatch.build.targets.wheel]
 packages = ["ragops"]

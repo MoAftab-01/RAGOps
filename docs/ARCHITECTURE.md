@@ -6,7 +6,7 @@ How RAGOps is put together, and why. This document assumes you have read the [RE
 
 ## Table of contents
 
-- [The core idea](#the-coreidea)
+- [The core idea](#the-core-idea)
 - [Request lifecycle](#request-lifecycle)
 - [Layered structure](#layered-structure)
 - [Data model](#data-model)

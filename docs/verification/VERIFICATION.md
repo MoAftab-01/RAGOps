@@ -78,7 +78,7 @@ now has a regression test in `backend/tests/test_route_contracts.py`.
 |---|---|---|---|
 | 1 | `compare_runs` the handler shadowed `compare_runs` the import | `POST /evaluations/compare` recursed and 500'd | The name bound in the module namespace, so the call inside the body resolved to the handler |
 | 2 | Fabricated `WindowFilter` | `TypeError` on *every* call | `start` and `end` are required; a windowless lookup was inventing two datetimes to carry an org id |
-| 3 | Four routes typed `principal: Principal` | 422 for every caller | `Principal` is a Pydantic model; written bare, FastAPI read it as a required **body field** |
+| 3 | Four routes typed `principal: Principal` | 422 for every caller | `Principal` is a plain frozen dataclass; written bare, FastAPI had no `Depends` to resolve and read it as a required **body field** |
 | 4 | `_close_run` handed an ORM row where it wanted `.id` | 500 at the end of an otherwise successful batch | SQLAlchemy tried to inline a whole model as a SQL literal |
 | 5 | `_close_run` aggregated over unflushed rows | Run stored `num_items: 0`, every metric `0.0` | `SessionLocal` sets `autoflush=False`, so the `SELECT` queried *around* the rows the same transaction had added |
 
@@ -131,8 +131,8 @@ marketing.
 ## Reproducing this
 
 ```bash
+python -m venv .venv      # must come first: `make install` runs .venv/Scripts/pip.exe
 make install && make infra
-python -m venv .venv
 make migrate && make seed
 make demo-data        # so the dashboard is not empty
 make backend          # terminal 1

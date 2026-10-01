@@ -115,7 +115,9 @@ style preference.
 ```bash
 make test-backend    # pytest, real Postgres + Redis
 make test-frontend   # vitest
-make lint            # ruff check
+
+cd backend  && ../.venv/Scripts/python.exe -m ruff check app tests   # what make lint runs, minus mypy
+cd frontend && npm run typecheck && npm run lint
 ```
 
 **Backend tests run against the real thing.** Integration tests drive the
