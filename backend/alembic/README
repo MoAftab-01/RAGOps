@@ -1,0 +1,11 @@
+Alembic migrations for RAGOps.
+
+The database URL is read from app.config.Settings in env.py, so migrations
+honour the same environment variables and the same .env file as the server.
+Nothing in this directory contains a credential.
+
+From the repository root:
+
+    alembic -c backend/alembic.ini upgrade head
+    alembic -c backend/alembic.ini current
+    alembic -c backend/alembic.ini downgrade -1

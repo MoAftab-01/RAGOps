@@ -1,0 +1,103 @@
+# ---------------------------------------------------------------------------
+# RAGOps local stack.
+#
+#   docker compose up -d postgres redis qdrant
+#   docker compose up -d backend frontend
+#
+# Ollama is intentionally NOT a compose service: it installs to a separate
+# native process and the weights alone exceed any reasonable bind-mount setup.
+# Run it with the native installer (see README) and point OLLAMA_BASE_URL at it.
+# ---------------------------------------------------------------------------
+name: ragops
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ragops-postgres
+    environment:
+      POSTGRES_USER: ragops
+      POSTGRES_PASSWORD: ragops
+      POSTGRES_DB: ragops
+    ports:
+      # 5432 on the host is already taken by a native PostgreSQL install on
+      # some machines, so the published port is overridable. Override the
+      # host side in your .env with PG_PORT=5432 once that install is gone.
+      - "${PG_PORT:-55432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ragops -d ragops"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: ragops-redis
+    command: ["redis-server", "--save", "60", "1", "--appendonly", "no"]
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Optional: the default vector store is FAISS on local disk. Qdrant is only
+  # needed if you set VECTOR_DB_URL / qdrant_url and want a shared vector service.
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: ragops-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    container_name: ragops-backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+asyncpg://ragops:ragops@postgres:5432/ragops
+      DATABASE_SYNC_URL: postgresql+psycopg2://ragops:ragops@postgres:5432/ragops
+      REDIS_URL: redis://redis:6379/0
+      QDRANT_URL: http://qdrant:6333
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      ENVIRONMENT: development
+      LOG_LEVEL: INFO
+      # Never bake a real key into an image. Compose reads this from the
+      # developer's local .env at run time, and .env is git-ignored.
+      RAGOPS_API_KEY: ${RAGOPS_API_KEY:-dev-key}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./evaluation:/app/evaluation
+      - hf_cache:/root/.cache/huggingface
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    container_name: ragops-frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000/api
+
+volumes:
+  postgres_data:
+  redis_data:
+  qdrant_data:
+  hf_cache:

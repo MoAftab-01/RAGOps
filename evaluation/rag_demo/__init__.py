@@ -1,0 +1,1 @@
+"""Demonstration RAG support bot for RAGOps (§12)."""

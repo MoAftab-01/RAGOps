@@ -1,0 +1,1 @@
+"""Agent observability demo for RAGOps (§14)."""

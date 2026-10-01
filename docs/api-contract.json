@@ -1,0 +1,6255 @@
+{
+ "routes": {
+  "DELETE /api/organizations/{organization_id}/api-keys/{key_id}": {
+   "params": [
+    [
+     "organization_id",
+     true,
+     "string"
+    ],
+    [
+     "key_id",
+     true,
+     "string"
+    ]
+   ],
+   "write": true,
+   "body": null,
+   "resp": "MessageResponse"
+  },
+  "GET /api/analytics/cost": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "CostAnalytics"
+  },
+  "GET /api/analytics/cost-quality": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "CostQualityReport"
+  },
+  "GET /api/analytics/latency": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "LatencyAnalytics"
+  },
+  "GET /api/analytics/token-efficiency": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "TokenEfficiencyReport"
+  },
+  "GET /api/analytics/tokens": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "TokenAnalytics"
+  },
+  "GET /api/analytics/tokens/by-model": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "{\"items\": {\"type\": \"object\"}, \"title\": \"Response Tokens Per Model Api Analytics Tokens By Model Get\", \"type\": \"array\"}"
+  },
+  "GET /api/analytics/tokens/by-user": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "{\"items\": {\"type\": \"object\"}, \"title\": \"Response Tokens Per User Api Analytics Tokens By User Get\", \"type\": \"array\"}"
+  },
+  "GET /api/anomalies": {
+   "params": [
+    [
+     "anomaly_type",
+     false,
+     "string"
+    ],
+    [
+     "severity",
+     false,
+     "string"
+    ],
+    [
+     "is_resolved",
+     false,
+     "boolean"
+    ],
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ],
+    [
+     "page",
+     false,
+     "integer"
+    ],
+    [
+     "page_size",
+     false,
+     "integer"
+    ]
+   ],
+   "body": null,
+   "resp": "Page_AnomalyOut_"
+  },
+  "GET /api/applications": {
+   "params": [
+    [
+     "include_inactive",
+     false,
+     "boolean"
+    ],
+    [
+     "page",
+     false,
+     "integer"
+    ],
+    [
+     "page_size",
+     false,
+     "integer"
+    ]
+   ],
+   "body": null,
+   "resp": "Page_ApplicationOut_"
+  },
+  "GET /api/applications/{application_id}/stats": {
+   "params": [
+    [
+     "application_id",
+     true,
+     "string"
+    ],
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "ApplicationStats"
+  },
+  "GET /api/collector/stats": {
+   "params": [],
+   "body": null,
+   "resp": "CollectorStatus"
+  },
+  "GET /api/dashboard/overview": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "DashboardOverview"
+  },
+  "GET /api/evaluations/runs": {
+   "params": [
+    [
+     "evaluation_type",
+     false,
+     "string"
+    ],
+    [
+     "status",
+     false,
+     "string"
+    ],
+    [
+     "dataset_name",
+     false,
+     "string"
+    ],
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ],
+    [
+     "page",
+     false,
+     "integer"
+    ],
+    [
+     "page_size",
+     false,
+     "integer"
+    ]
+   ],
+   "body": null,
+   "resp": "Page_EvaluationRunSummary_"
+  },
+  "GET /api/evaluations/runs/{run_id}": {
+   "params": [
+    [
+     "run_id",
+     true,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "EvaluationRunDetail"
+  },
+  "GET /api/evaluations/runs/{run_id}/results": {
+   "params": [
+    [
+     "run_id",
+     true,
+     "string"
+    ],
+    [
+     "page",
+     false,
+     "integer"
+    ],
+    [
+     "page_size",
+     false,
+     "integer"
+    ]
+   ],
+   "body": null,
+   "resp": "Page_PerQueryResult_"
+  },
+  "GET /api/experiments": {
+   "params": [
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ],
+    [
+     "page",
+     false,
+     "integer"
+    ],
+    [
+     "page_size",
+     false,
+     "integer"
+    ]
+   ],
+   "body": null,
+   "resp": "Page_ExperimentOut_"
+  },
+  "GET /api/experiments/{experiment_id}": {
+   "params": [
+    [
+     "experiment_id",
+     true,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "ExperimentOut"
+  },
+  "GET /api/health": {
+   "params": [],
+   "body": null,
+   "resp": "HealthResponse"
+  },
+  "GET /api/models": {
+   "params": [],
+   "body": null,
+   "resp": "ModelOut"
+  },
+  "GET /api/organizations": {
+   "params": [],
+   "body": null,
+   "resp": "OrganizationOut"
+  },
+  "GET /api/organizations/{organization_id}/api-keys": {
+   "params": [
+    [
+     "organization_id",
+     true,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "ApiKeyOut"
+  },
+  "GET /api/rag/config": {
+   "params": [],
+   "body": null,
+   "resp": "{\"title\": \"Response Rag Config Api Rag Config Get\", \"type\": \"object\"}"
+  },
+  "GET /api/recommendations": {
+   "params": [
+    [
+     "category",
+     false,
+     "string"
+    ],
+    [
+     "priority",
+     false,
+     "string"
+    ],
+    [
+     "status",
+     false,
+     "string"
+    ],
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ],
+    [
+     "page",
+     false,
+     "integer"
+    ],
+    [
+     "page_size",
+     false,
+     "integer"
+    ]
+   ],
+   "body": null,
+   "resp": "Page_RecommendationOut_"
+  },
+  "GET /api/traces": {
+   "params": [
+    [
+     "status",
+     false,
+     "string"
+    ],
+    [
+     "kind",
+     false,
+     "string"
+    ],
+    [
+     "model",
+     false,
+     "string"
+    ],
+    [
+     "user_id",
+     false,
+     "string"
+    ],
+    [
+     "has_error",
+     false,
+     "boolean"
+    ],
+    [
+     "min_duration_ms",
+     false,
+     "number"
+    ],
+    [
+     "max_duration_ms",
+     false,
+     "number"
+    ],
+    [
+     "min_tokens",
+     false,
+     "integer"
+    ],
+    [
+     "search",
+     false,
+     "string"
+    ],
+    [
+     "window",
+     false,
+     "string"
+    ],
+    [
+     "start",
+     false,
+     "string"
+    ],
+    [
+     "end",
+     false,
+     "string"
+    ],
+    [
+     "application",
+     false,
+     "string"
+    ],
+    [
+     "page",
+     false,
+     "integer"
+    ],
+    [
+     "page_size",
+     false,
+     "integer"
+    ]
+   ],
+   "body": null,
+   "resp": "Page_TraceSummary_"
+  },
+  "GET /api/traces/{trace_id}": {
+   "params": [
+    [
+     "trace_id",
+     true,
+     "string"
+    ]
+   ],
+   "body": null,
+   "resp": "TraceDetail"
+  },
+  "PATCH /api/anomalies/{anomaly_id}": {
+   "params": [
+    [
+     "anomaly_id",
+     true,
+     "string"
+    ]
+   ],
+   "write": true,
+   "body": "AnomalyResolveRequest",
+   "resp": "AnomalyOut"
+  },
+  "POST /api/anomalies/detect": {
+   "params": [],
+   "write": true,
+   "body": "AnomalyDetectRequest",
+   "resp": "AnomalyDetectResponse"
+  },
+  "POST /api/collector/start": {
+   "params": [],
+   "write": true,
+   "body": null,
+   "resp": "CollectorStatus"
+  },
+  "POST /api/collector/stop": {
+   "params": [],
+   "write": true,
+   "body": null,
+   "resp": "CollectorStatus"
+  },
+  "POST /api/evaluations/answer": {
+   "params": [],
+   "write": true,
+   "body": "AnswerEvaluationRequest",
+   "resp": "AnswerEvaluationSummary"
+  },
+  "POST /api/evaluations/compare": {
+   "params": [],
+   "write": true,
+   "body": "CompareRequest",
+   "resp": "RegressionReport"
+  },
+  "POST /api/evaluations/retrieval": {
+   "params": [],
+   "write": true,
+   "body": "RetrievalEvaluationRequest",
+   "resp": "EvaluationRunDetail"
+  },
+  "POST /api/experiments": {
+   "params": [],
+   "write": true,
+   "body": "ExperimentCreate",
+   "resp": "ExperimentOut"
+  },
+  "POST /api/organizations": {
+   "params": [],
+   "write": true,
+   "body": "OrganizationCreate",
+   "resp": "OrganizationOut"
+  },
+  "POST /api/organizations/{organization_id}/api-keys": {
+   "params": [
+    [
+     "organization_id",
+     true,
+     "string"
+    ]
+   ],
+   "write": true,
+   "body": "ApiKeyCreate",
+   "resp": "CreatedApiKey"
+  },
+  "POST /api/rag/index": {
+   "params": [
+    [
+     "force",
+     false,
+     "boolean"
+    ]
+   ],
+   "write": true,
+   "body": null,
+   "resp": "IndexResponse"
+  },
+  "POST /api/rag/query": {
+   "params": [],
+   "write": true,
+   "body": "RagQueryRequest",
+   "resp": "RagQueryResponse"
+  },
+  "POST /api/recommendations/generate": {
+   "params": [],
+   "write": true,
+   "body": "RecommendationGenerateRequest",
+   "resp": "RecommendationGenerateResponse"
+  },
+  "POST /api/traces": {
+   "params": [],
+   "write": true,
+   "body": "TraceCreate",
+   "resp": "{\"additionalProperties\": {\"type\": \"string\"}, \"title\": \"Response Create Trace Api Traces Post\", \"type\": \"object\"}"
+  },
+  "POST /api/traces/batch": {
+   "params": [],
+   "write": true,
+   "body": "BatchIngest",
+   "resp": "IngestResponse"
+  },
+  "POST /api/traces/{trace_id}/complete": {
+   "params": [
+    [
+     "trace_id",
+     true,
+     "string"
+    ]
+   ],
+   "write": true,
+   "body": "TraceCreate",
+   "resp": "MessageResponse"
+  },
+  "POST /api/traces/{trace_id}/generation": {
+   "params": [
+    [
+     "trace_id",
+     true,
+     "string"
+    ]
+   ],
+   "write": true,
+   "body": "GenerationIn",
+   "resp": "{\"title\": \"Response Add Generation Api Traces  Trace Id  Generation Post\", \"type\": \"object\"}"
+  },
+  "POST /api/traces/{trace_id}/retrieval": {
+   "params": [
+    [
+     "trace_id",
+     true,
+     "string"
+    ]
+   ],
+   "write": true,
+   "body": "RetrievalIn",
+   "resp": "{\"title\": \"Response Add Retrieval Api Traces  Trace Id  Retrieval Post\", \"type\": \"object\"}"
+  },
+  "PUT /api/models": {
+   "params": [],
+   "write": true,
+   "body": "ModelUpsert",
+   "resp": "ModelOut"
+  }
+ },
+ "schemas": {
+  "AnomalyDetectRequest": {
+   "properties": {
+    "application": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application"
+    },
+    "window": {
+     "type": "string",
+     "title": "Window",
+     "default": "7d"
+    },
+    "lookback_hours": {
+     "type": "integer",
+     "maximum": 2160.0,
+     "minimum": 1.0,
+     "title": "Lookback Hours",
+     "default": 168
+    },
+    "contamination": {
+     "anyOf": [
+      {
+       "type": "number",
+       "maximum": 0.2,
+       "minimum": 0.001
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Contamination",
+     "description": "Override the configured rate"
+    },
+    "features": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Features"
+    },
+    "persist": {
+     "type": "boolean",
+     "title": "Persist",
+     "default": true
+    }
+   },
+   "type": "object",
+   "description": "Run IsolationForest over recent telemetry.\n\nThe model is fitted per application on a feature matrix built from recorded\nfields only. There is no target label, so the fit is unsupervised and the\n\"expected band\" comes from the same window's percentiles.",
+   "title": "AnomalyDetectRequest"
+  },
+  "AnomalyDetectResponse": {
+   "properties": {
+    "application_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Id"
+    },
+    "application_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Name"
+    },
+    "num_samples": {
+     "type": "integer",
+     "title": "Num Samples"
+    },
+    "num_features": {
+     "type": "integer",
+     "title": "Num Features"
+    },
+    "contamination": {
+     "type": "number",
+     "title": "Contamination"
+    },
+    "detection_method": {
+     "type": "string",
+     "title": "Detection Method",
+     "default": "isolation_forest"
+    },
+    "num_anomalies": {
+     "type": "integer",
+     "title": "Num Anomalies"
+    },
+    "anomaly_rate": {
+     "type": "number",
+     "title": "Anomaly Rate"
+    },
+    "feature_importance_proxy": {
+     "additionalProperties": {
+      "type": "number"
+     },
+     "type": "object",
+     "title": "Feature Importance Proxy",
+     "description": "Per-feature deviation magnitude, not a fitted importance score"
+    },
+    "anomalies": {
+     "items": {
+      "$ref": "#/components/schemas/AnomalyOut"
+     },
+     "type": "array",
+     "title": "Anomalies"
+    },
+    "duration_ms": {
+     "type": "number",
+     "title": "Duration Ms"
+    }
+   },
+   "type": "object",
+   "required": [
+    "application_id",
+    "application_name",
+    "num_samples",
+    "num_features",
+    "contamination",
+    "num_anomalies",
+    "anomaly_rate",
+    "duration_ms"
+   ],
+   "title": "AnomalyDetectResponse"
+  },
+  "AnomalyOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "application_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Id"
+    },
+    "application_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Name"
+    },
+    "trace_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Trace Id"
+    },
+    "anomaly_type": {
+     "type": "string",
+     "title": "Anomaly Type"
+    },
+    "severity": {
+     "type": "string",
+     "title": "Severity"
+    },
+    "metric": {
+     "type": "string",
+     "title": "Metric"
+    },
+    "observed_value": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Observed Value"
+    },
+    "expected_low": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Expected Low"
+    },
+    "expected_high": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Expected High"
+    },
+    "anomaly_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Anomaly Score"
+    },
+    "peer_median": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Peer Median"
+    },
+    "peer_p95": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Peer P95"
+    },
+    "evidence": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Evidence"
+    },
+    "detected_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Detected At"
+    },
+    "detection_method": {
+     "type": "string",
+     "title": "Detection Method"
+    },
+    "is_resolved": {
+     "type": "boolean",
+     "title": "Is Resolved"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "application_id",
+    "trace_id",
+    "anomaly_type",
+    "severity",
+    "metric",
+    "observed_value",
+    "expected_low",
+    "expected_high",
+    "anomaly_score",
+    "peer_median",
+    "peer_p95",
+    "evidence",
+    "detected_at",
+    "detection_method",
+    "is_resolved"
+   ],
+   "title": "AnomalyOut"
+  },
+  "AnomalyResolveRequest": {
+   "properties": {
+    "is_resolved": {
+     "type": "boolean",
+     "title": "Is Resolved",
+     "description": "true resolves the anomaly, false reopens it"
+    }
+   },
+   "type": "object",
+   "required": [
+    "is_resolved"
+   ],
+   "description": "Resolve or reopen one anomaly.\n\nA single field because resolution is the only mutable thing about a detected\nanomaly: the measurement that produced it is a record, and editing it would\nmake the evidence disagree with the row it was meant to justify.",
+   "title": "AnomalyResolveRequest"
+  },
+  "AnswerEvaluationItem": {
+   "properties": {
+    "question": {
+     "type": "string",
+     "maxLength": 4000,
+     "minLength": 1,
+     "title": "Question"
+    },
+    "answer": {
+     "type": "string",
+     "maxLength": 100000,
+     "minLength": 1,
+     "title": "Answer"
+    },
+    "context": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Context"
+    },
+    "reference_answer": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Reference Answer"
+    },
+    "trace_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Trace Id"
+    },
+    "relevant_documents": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Relevant Documents"
+    }
+   },
+   "type": "object",
+   "required": [
+    "question",
+    "answer"
+   ],
+   "title": "AnswerEvaluationItem"
+  },
+  "AnswerEvaluationRequest": {
+   "properties": {
+    "name": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 255
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Name"
+    },
+    "application": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application"
+    },
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/AnswerEvaluationItem"
+     },
+     "type": "array",
+     "maxItems": 500,
+     "minItems": 1,
+     "title": "Items"
+    },
+    "use_llm_judge": {
+     "type": "boolean",
+     "title": "Use Llm Judge",
+     "default": false
+    },
+    "judge_model": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Judge Model"
+    },
+    "persist": {
+     "type": "boolean",
+     "title": "Persist",
+     "default": true
+    }
+   },
+   "type": "object",
+   "required": [
+    "items"
+   ],
+   "title": "AnswerEvaluationRequest"
+  },
+  "AnswerEvaluationResult": {
+   "properties": {
+    "question": {
+     "type": "string",
+     "title": "Question"
+    },
+    "faithfulness": {
+     "type": "number",
+     "title": "Faithfulness"
+    },
+    "context_relevance": {
+     "type": "number",
+     "title": "Context Relevance"
+    },
+    "answer_relevance": {
+     "type": "number",
+     "title": "Answer Relevance"
+    },
+    "citation_coverage": {
+     "type": "number",
+     "title": "Citation Coverage"
+    },
+    "unsupported_claim_ratio": {
+     "type": "number",
+     "title": "Unsupported Claim Ratio"
+    },
+    "judge_faithfulness": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Judge Faithfulness"
+    },
+    "judge_answer_relevance": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Judge Answer Relevance"
+    },
+    "judge_model": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Judge Model"
+    },
+    "method": {
+     "type": "string",
+     "title": "Method",
+     "description": "Which family of metrics produced these numbers"
+    },
+    "claims": {
+     "items": {
+      "$ref": "#/components/schemas/ClaimEvaluation"
+     },
+     "type": "array",
+     "title": "Claims"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    }
+   },
+   "type": "object",
+   "required": [
+    "question",
+    "faithfulness",
+    "context_relevance",
+    "answer_relevance",
+    "citation_coverage",
+    "unsupported_claim_ratio",
+    "method"
+   ],
+   "title": "AnswerEvaluationResult"
+  },
+  "AnswerEvaluationSummary": {
+   "properties": {
+    "num_items": {
+     "type": "integer",
+     "title": "Num Items"
+    },
+    "method": {
+     "type": "string",
+     "title": "Method"
+    },
+    "faithfulness": {
+     "type": "number",
+     "title": "Faithfulness"
+    },
+    "context_relevance": {
+     "type": "number",
+     "title": "Context Relevance"
+    },
+    "answer_relevance": {
+     "type": "number",
+     "title": "Answer Relevance"
+    },
+    "citation_coverage": {
+     "type": "number",
+     "title": "Citation Coverage"
+    },
+    "unsupported_claim_ratio": {
+     "type": "number",
+     "title": "Unsupported Claim Ratio"
+    },
+    "judge_faithfulness": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Judge Faithfulness"
+    },
+    "judge_answer_relevance": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Judge Answer Relevance"
+    },
+    "judge_model": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Judge Model"
+    },
+    "per_item": {
+     "items": {
+      "$ref": "#/components/schemas/AnswerEvaluationResult"
+     },
+     "type": "array",
+     "title": "Per Item"
+    }
+   },
+   "type": "object",
+   "required": [
+    "num_items",
+    "method",
+    "faithfulness",
+    "context_relevance",
+    "answer_relevance",
+    "citation_coverage",
+    "unsupported_claim_ratio"
+   ],
+   "description": "Aggregate of an answer evaluation. Deterministic and judge columns are\nkept apart so the UI can never present a judge number as a measured one.",
+   "title": "AnswerEvaluationSummary"
+  },
+  "ApiKeyCreate": {
+   "properties": {
+    "name": {
+     "type": "string",
+     "maxLength": 128,
+     "minLength": 1,
+     "title": "Name",
+     "description": "Label for the key, e.g. 'CI'"
+    },
+    "scopes": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Scopes",
+     "description": "Any of: ingest, read. Defaults to both."
+    },
+    "expires_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Expires At",
+     "description": "Optional expiry. A key with none never expires; revocation is the control."
+    }
+   },
+   "type": "object",
+   "required": [
+    "name"
+   ],
+   "description": "A request to mint one key for an organization.",
+   "title": "ApiKeyCreate"
+  },
+  "ApiKeyOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "organization_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Organization Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "key_prefix": {
+     "type": "string",
+     "title": "Key Prefix",
+     "description": "First 12 characters; never enough to authenticate"
+    },
+    "scopes": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Scopes"
+    },
+    "is_active": {
+     "type": "boolean",
+     "title": "Is Active",
+     "default": true
+    },
+    "last_used_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Last Used At"
+    },
+    "revoked_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Revoked At"
+    },
+    "expires_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Expires At"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "updated_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Updated At"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "organization_id",
+    "name",
+    "key_prefix",
+    "created_at",
+    "updated_at"
+   ],
+   "description": "One key's metadata. Deliberately has no plaintext field.\n\n``is_active`` is derived rather than stored: it is ``revoked_at is None and\nexpires_at is in the future``, and deriving it means an expired key stops\nreading as usable without a background job having to run to notice. That\nalso makes this schema un-validatable from a row, for the same reason as\n:class:`OrganizationOut` -- the field has no column behind it.",
+   "title": "ApiKeyOut"
+  },
+  "ApplicationOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "description": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Description"
+    },
+    "environment": {
+     "type": "string",
+     "title": "Environment"
+    },
+    "is_active": {
+     "type": "boolean",
+     "title": "Is Active"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "trace_count": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Trace Count"
+    },
+    "last_seen_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Last Seen At"
+    },
+    "total_tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Total Tokens"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "description",
+    "environment",
+    "is_active",
+    "created_at"
+   ],
+   "title": "ApplicationOut"
+  },
+  "ApplicationStats": {
+   "properties": {
+    "application": {
+     "type": "string",
+     "title": "Application"
+    },
+    "application_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Application Id"
+    },
+    "window": {
+     "type": "string",
+     "title": "Window"
+    },
+    "start": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start"
+    },
+    "end": {
+     "type": "string",
+     "format": "date-time",
+     "title": "End"
+    },
+    "trace_count": {
+     "type": "integer",
+     "title": "Trace Count"
+    },
+    "total_tokens": {
+     "type": "integer",
+     "title": "Total Tokens"
+    },
+    "estimated_cost": {
+     "type": "number",
+     "title": "Estimated Cost"
+    },
+    "cost_label": {
+     "type": "string",
+     "title": "Cost Label"
+    },
+    "avg_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Avg Latency Ms"
+    },
+    "error_rate": {
+     "type": "number",
+     "title": "Error Rate"
+    },
+    "model_usage": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Model Usage"
+    },
+    "time_series": {
+     "items": {
+      "$ref": "#/components/schemas/TimeSeriesPoint"
+     },
+     "type": "array",
+     "title": "Time Series"
+    }
+   },
+   "type": "object",
+   "required": [
+    "application",
+    "application_id",
+    "window",
+    "start",
+    "end",
+    "trace_count",
+    "total_tokens",
+    "estimated_cost",
+    "cost_label",
+    "avg_latency_ms",
+    "error_rate"
+   ],
+   "description": "Everything the per-application statistics page shows, in one object.\n\nNot a paginated shape: this is a single window's summary, and the totals\n(``trace_count``, ``total_tokens``) describe the whole window rather than a\npage of it. ``model_usage`` and ``time_series`` are complete for the window\ntoo \u2014 paging them would make the totals and the breakdown describe different\npopulations.",
+   "title": "ApplicationStats"
+  },
+  "BatchIngest": {
+   "properties": {
+    "traces": {
+     "items": {
+      "$ref": "#/components/schemas/TraceCreate"
+     },
+     "type": "array",
+     "maxItems": 500,
+     "title": "Traces"
+    }
+   },
+   "type": "object",
+   "description": "Buffered batch flush from the SDK.\n\nThe SDK buffers client-side so instrumenting a request does not add a\nsynchronous HTTP round trip to the application's hot path.",
+   "title": "BatchIngest"
+  },
+  "ClaimEvaluation": {
+   "properties": {
+    "claim": {
+     "type": "string",
+     "title": "Claim"
+    },
+    "supported": {
+     "type": "boolean",
+     "title": "Supported"
+    },
+    "best_matching_context_index": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Best Matching Context Index"
+    },
+    "similarity": {
+     "type": "number",
+     "title": "Similarity"
+    },
+    "method": {
+     "type": "string",
+     "title": "Method",
+     "description": "deterministic_alignment | embedding_similarity"
+    }
+   },
+   "type": "object",
+   "required": [
+    "claim",
+    "supported",
+    "best_matching_context_index",
+    "similarity",
+    "method"
+   ],
+   "description": "One extracted claim and whether the context supports it.",
+   "title": "ClaimEvaluation"
+  },
+  "CollectorStatus": {
+   "properties": {
+    "enabled": {
+     "type": "boolean",
+     "title": "Enabled"
+    },
+    "running": {
+     "type": "boolean",
+     "title": "Running"
+    },
+    "queue_depth": {
+     "type": "integer",
+     "title": "Queue Depth"
+    },
+    "queue_capacity": {
+     "type": "integer",
+     "title": "Queue Capacity"
+    },
+    "enqueued": {
+     "type": "integer",
+     "title": "Enqueued"
+    },
+    "flushed": {
+     "type": "integer",
+     "title": "Flushed"
+    },
+    "dropped": {
+     "type": "integer",
+     "title": "Dropped"
+    },
+    "failed_flushes": {
+     "type": "integer",
+     "title": "Failed Flushes"
+    },
+    "retries": {
+     "type": "integer",
+     "title": "Retries"
+    },
+    "flush_count": {
+     "type": "integer",
+     "title": "Flush Count"
+    },
+    "last_flush_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Last Flush At",
+     "description": "ISO-8601 time of the last flush attempt"
+    },
+    "last_error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Last Error"
+    }
+   },
+   "type": "object",
+   "required": [
+    "enabled",
+    "running",
+    "queue_depth",
+    "queue_capacity",
+    "enqueued",
+    "flushed",
+    "dropped",
+    "failed_flushes",
+    "retries",
+    "flush_count"
+   ],
+   "description": "Collector counters plus the current queue depth.\n\n``queue_depth`` against ``queue_capacity`` is the pair to watch: depth pinned\nat capacity means writes are arriving faster than the flush loop persists\nthem, and the gap is going to ``dropped`` rather than to a slower ingest.",
+   "title": "CollectorStatus"
+  },
+  "CompareRequest": {
+   "properties": {
+    "baseline_run_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Baseline Run Id"
+    },
+    "candidate_run_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Candidate Run Id"
+    },
+    "max_regression_pct": {
+     "type": "number",
+     "minimum": 0.0,
+     "title": "Max Regression Pct",
+     "default": 5.0
+    }
+   },
+   "type": "object",
+   "required": [
+    "baseline_run_id",
+    "candidate_run_id"
+   ],
+   "description": "Two recorded runs, and the size of a drop worth calling a regression.\n\n``max_regression_pct`` is a threshold on the *recorded* relative change, not\na tolerance the report adjusts to produce a verdict: setting it to 0 flags\nany movement at all, which is what you want when the baseline is a\npublished number other people are relying on.",
+   "title": "CompareRequest"
+  },
+  "ConfigDifference": {
+   "properties": {
+    "key": {
+     "type": "string",
+     "title": "Key"
+    },
+    "baseline_value": {
+     "title": "Baseline Value"
+    },
+    "candidate_value": {
+     "title": "Candidate Value"
+    }
+   },
+   "type": "object",
+   "required": [
+    "key",
+    "baseline_value",
+    "candidate_value"
+   ],
+   "description": "A recorded, factual difference between two runs' configurations.\n\nOnly keys that actually changed appear here \u2014 RAGOps never speculates\nabout causes beyond what the two configs literally say.",
+   "title": "ConfigDifference"
+  },
+  "CostAnalytics": {
+   "properties": {
+    "window": {
+     "type": "string",
+     "title": "Window"
+    },
+    "start": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start"
+    },
+    "end": {
+     "type": "string",
+     "format": "date-time",
+     "title": "End"
+    },
+    "total_cost": {
+     "type": "number",
+     "title": "Total Cost"
+    },
+    "cost_label": {
+     "type": "string",
+     "title": "Cost Label"
+    },
+    "cost_per_request": {
+     "type": "number",
+     "title": "Cost Per Request"
+    },
+    "cost_per_user": {
+     "type": "number",
+     "title": "Cost Per User"
+    },
+    "cost_per_application": {
+     "type": "number",
+     "title": "Cost Per Application"
+    },
+    "breakdown": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Breakdown"
+    },
+    "time_series": {
+     "items": {
+      "$ref": "#/components/schemas/TimeSeriesPoint"
+     },
+     "type": "array",
+     "title": "Time Series"
+    }
+   },
+   "type": "object",
+   "required": [
+    "window",
+    "start",
+    "end",
+    "total_cost",
+    "cost_label",
+    "cost_per_request",
+    "cost_per_user",
+    "cost_per_application"
+   ],
+   "title": "CostAnalytics"
+  },
+  "CostQualityReport": {
+   "properties": {
+    "window": {
+     "type": "string",
+     "title": "Window"
+    },
+    "start": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start"
+    },
+    "end": {
+     "type": "string",
+     "format": "date-time",
+     "title": "End"
+    },
+    "models": {
+     "items": {
+      "$ref": "#/components/schemas/ModelComparison"
+     },
+     "type": "array",
+     "title": "Models"
+    },
+    "cost_label": {
+     "type": "string",
+     "title": "Cost Label"
+    },
+    "quality_metric_definition": {
+     "type": "string",
+     "title": "Quality Metric Definition"
+    },
+    "best_value": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Best Value"
+    },
+    "best_quality": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Best Quality"
+    }
+   },
+   "type": "object",
+   "required": [
+    "window",
+    "start",
+    "end",
+    "cost_label",
+    "quality_metric_definition"
+   ],
+   "title": "CostQualityReport"
+  },
+  "CreatedApiKey": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "organization_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Organization Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "key_prefix": {
+     "type": "string",
+     "title": "Key Prefix",
+     "description": "First 12 characters; never enough to authenticate"
+    },
+    "scopes": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Scopes"
+    },
+    "is_active": {
+     "type": "boolean",
+     "title": "Is Active",
+     "default": true
+    },
+    "last_used_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Last Used At"
+    },
+    "revoked_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Revoked At"
+    },
+    "expires_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Expires At"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "updated_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Updated At"
+    },
+    "key": {
+     "type": "string",
+     "title": "Key",
+     "description": "Shown once. Store it now; it cannot be retrieved again."
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "organization_id",
+    "name",
+    "key_prefix",
+    "created_at",
+    "updated_at",
+    "key"
+   ],
+   "description": "A newly minted key, carrying its plaintext exactly once.\n\n``key`` is populated from the value ``generate_api_key()`` returned and is\nnever readable from the database afterwards. Losing it is not a bug to\nreport: the operator who has not copied it revokes the key and mints\nanother.",
+   "title": "CreatedApiKey"
+  },
+  "DashboardOverview": {
+   "properties": {
+    "window": {
+     "type": "string",
+     "title": "Window"
+    },
+    "start": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start"
+    },
+    "end": {
+     "type": "string",
+     "format": "date-time",
+     "title": "End"
+    },
+    "application_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Id"
+    },
+    "application_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Name"
+    },
+    "total_calls": {
+     "type": "integer",
+     "title": "Total Calls"
+    },
+    "total_traces": {
+     "type": "integer",
+     "title": "Total Traces"
+    },
+    "error_count": {
+     "type": "integer",
+     "title": "Error Count"
+    },
+    "error_rate": {
+     "type": "number",
+     "title": "Error Rate"
+    },
+    "total_input_tokens": {
+     "type": "integer",
+     "title": "Total Input Tokens"
+    },
+    "total_output_tokens": {
+     "type": "integer",
+     "title": "Total Output Tokens"
+    },
+    "total_tokens": {
+     "type": "integer",
+     "title": "Total Tokens"
+    },
+    "estimated_cost": {
+     "type": "number",
+     "title": "Estimated Cost"
+    },
+    "cost_label": {
+     "type": "string",
+     "title": "Cost Label"
+    },
+    "avg_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Avg Latency Ms"
+    },
+    "p50_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P50 Latency Ms"
+    },
+    "p95_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P95 Latency Ms"
+    },
+    "p99_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P99 Latency Ms"
+    },
+    "avg_tokens_per_request": {
+     "type": "number",
+     "title": "Avg Tokens Per Request"
+    },
+    "retrieval_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Retrieval Score"
+    },
+    "faithfulness": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Faithfulness"
+    },
+    "answer_relevance": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Answer Relevance"
+    },
+    "token_efficiency": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Token Efficiency"
+    },
+    "unique_users": {
+     "type": "integer",
+     "title": "Unique Users"
+    },
+    "anomaly_count": {
+     "type": "integer",
+     "title": "Anomaly Count"
+    },
+    "open_recommendation_count": {
+     "type": "integer",
+     "title": "Open Recommendation Count"
+    },
+    "time_series": {
+     "items": {
+      "$ref": "#/components/schemas/TimeSeriesPoint"
+     },
+     "type": "array",
+     "title": "Time Series"
+    },
+    "model_usage": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Model Usage"
+    },
+    "application_usage": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Application Usage"
+    }
+   },
+   "type": "object",
+   "required": [
+    "window",
+    "start",
+    "end",
+    "total_calls",
+    "total_traces",
+    "error_count",
+    "error_rate",
+    "total_input_tokens",
+    "total_output_tokens",
+    "total_tokens",
+    "estimated_cost",
+    "cost_label",
+    "avg_tokens_per_request",
+    "unique_users",
+    "anomaly_count",
+    "open_recommendation_count"
+   ],
+   "description": "Headline numbers for the dashboard. Every field comes from a query.",
+   "title": "DashboardOverview"
+  },
+  "EvalExample": {
+   "properties": {
+    "query": {
+     "type": "string",
+     "maxLength": 4000,
+     "minLength": 1,
+     "title": "Query"
+    },
+    "relevant_documents": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "maxItems": 100,
+     "minItems": 1,
+     "title": "Relevant Documents"
+    },
+    "relevance_grades": {
+     "anyOf": [
+      {
+       "additionalProperties": {
+        "type": "integer"
+       },
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Relevance Grades"
+    },
+    "reference_answer": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Reference Answer"
+    },
+    "tags": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Tags"
+    },
+    "metadata": {
+     "type": "object",
+     "title": "Metadata"
+    }
+   },
+   "type": "object",
+   "required": [
+    "query",
+    "relevant_documents"
+   ],
+   "description": "One labelled query in a retrieval evaluation dataset.\n\n``relevant_documents`` holds document ids as they appear in the knowledge\nbase (``Document.external_id``), so a dataset stays valid across re-ingestion.",
+   "title": "EvalExample"
+  },
+  "EvaluationRunDetail": {
+   "properties": {
+    "id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "application_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Id"
+    },
+    "dataset_name": {
+     "type": "string",
+     "title": "Dataset Name"
+    },
+    "evaluation_type": {
+     "type": "string",
+     "title": "Evaluation Type"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "k": {
+     "type": "integer",
+     "title": "K"
+    },
+    "num_queries": {
+     "type": "integer",
+     "title": "Num Queries"
+    },
+    "metrics": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Metrics"
+    },
+    "config": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Config"
+    },
+    "started_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Started At"
+    },
+    "completed_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Completed At"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "notes": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Notes"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Error"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "results": {
+     "items": {
+      "$ref": "#/components/schemas/PerQueryResult"
+     },
+     "type": "array",
+     "title": "Results"
+    }
+   },
+   "type": "object",
+   "required": [
+    "name",
+    "application_id",
+    "dataset_name",
+    "evaluation_type",
+    "status",
+    "k",
+    "num_queries",
+    "metrics",
+    "config",
+    "started_at",
+    "completed_at",
+    "duration_ms",
+    "notes",
+    "error",
+    "created_at"
+   ],
+   "title": "EvaluationRunDetail"
+  },
+  "EvaluationRunSummary": {
+   "properties": {
+    "id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "application_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Id"
+    },
+    "dataset_name": {
+     "type": "string",
+     "title": "Dataset Name"
+    },
+    "evaluation_type": {
+     "type": "string",
+     "title": "Evaluation Type"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "k": {
+     "type": "integer",
+     "title": "K"
+    },
+    "num_queries": {
+     "type": "integer",
+     "title": "Num Queries"
+    },
+    "metrics": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Metrics"
+    },
+    "config": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Config"
+    },
+    "started_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Started At"
+    },
+    "completed_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Completed At"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "notes": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Notes"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Error"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    }
+   },
+   "type": "object",
+   "required": [
+    "name",
+    "application_id",
+    "dataset_name",
+    "evaluation_type",
+    "status",
+    "k",
+    "num_queries",
+    "metrics",
+    "config",
+    "started_at",
+    "completed_at",
+    "duration_ms",
+    "notes",
+    "error",
+    "created_at"
+   ],
+   "title": "EvaluationRunSummary"
+  },
+  "ExperimentCreate": {
+   "properties": {
+    "name": {
+     "type": "string",
+     "maxLength": 255,
+     "title": "Name"
+    },
+    "application": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application"
+    },
+    "description": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Description"
+    },
+    "hypothesis": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Hypothesis"
+    },
+    "dataset_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Dataset Name"
+    },
+    "variants": {
+     "items": {
+      "$ref": "#/components/schemas/ExperimentVariantIn"
+     },
+     "type": "array",
+     "maxItems": 10,
+     "minItems": 2,
+     "title": "Variants"
+    },
+    "baseline_variant": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Baseline Variant",
+     "description": "Variant name to treat as baseline"
+    }
+   },
+   "type": "object",
+   "required": [
+    "name",
+    "variants"
+   ],
+   "title": "ExperimentCreate"
+  },
+  "ExperimentOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "application_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Id"
+    },
+    "description": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Description"
+    },
+    "hypothesis": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Hypothesis"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "dataset_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Dataset Name"
+    },
+    "baseline_run_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Baseline Run Id"
+    },
+    "winner_variant": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Winner Variant"
+    },
+    "completed_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Completed At"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "variants": {
+     "items": {
+      "$ref": "#/components/schemas/ExperimentVariantOut"
+     },
+     "type": "array",
+     "title": "Variants"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "application_id",
+    "description",
+    "hypothesis",
+    "status",
+    "dataset_name",
+    "baseline_run_id",
+    "winner_variant",
+    "completed_at",
+    "created_at"
+   ],
+   "title": "ExperimentOut"
+  },
+  "ExperimentVariantIn": {
+   "properties": {
+    "name": {
+     "type": "string",
+     "maxLength": 128,
+     "title": "Name"
+    },
+    "config": {
+     "type": "object",
+     "title": "Config"
+    },
+    "run_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Run Id"
+    }
+   },
+   "type": "object",
+   "required": [
+    "name"
+   ],
+   "title": "ExperimentVariantIn"
+  },
+  "ExperimentVariantOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "config": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Config"
+    },
+    "run_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Run Id"
+    },
+    "metrics": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Metrics"
+    },
+    "deltas_vs_baseline": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Deltas Vs Baseline"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "config",
+    "run_id"
+   ],
+   "title": "ExperimentVariantOut"
+  },
+  "GenerationIn": {
+   "properties": {
+    "model": {
+     "type": "string",
+     "maxLength": 128,
+     "title": "Model"
+    },
+    "provider": {
+     "type": "string",
+     "maxLength": 64,
+     "title": "Provider",
+     "default": "ollama"
+    },
+    "prompt": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Prompt"
+    },
+    "completion": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Completion"
+    },
+    "input_tokens": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Input Tokens"
+    },
+    "output_tokens": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Output Tokens"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "time_to_first_token_ms": {
+     "anyOf": [
+      {
+       "type": "number",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Time To First Token Ms"
+    },
+    "temperature": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Temperature"
+    },
+    "max_tokens": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Tokens"
+    },
+    "status": {
+     "type": "string",
+     "enum": [
+      "success",
+      "error",
+      "running",
+      "cancelled"
+     ],
+     "title": "Status",
+     "default": "success"
+    },
+    "span_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Span Id"
+    },
+    "timestamp": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Timestamp",
+     "description": "When the generation ran. Defaults to the server's insert time; state it when replaying history so token and cost analytics land in the right window."
+    },
+    "metadata": {
+     "type": "object",
+     "title": "Metadata"
+    }
+   },
+   "type": "object",
+   "required": [
+    "model"
+   ],
+   "description": "An LLM generation attached to a trace.\n\nToken counts may be supplied by the caller (Ollama returns exact counts) or\nomitted, in which case the server derives them from ``prompt``/``completion``\nwith the deterministic counter. The server never invents them.",
+   "title": "GenerationIn"
+  },
+  "HTTPValidationError": {
+   "properties": {
+    "detail": {
+     "items": {
+      "$ref": "#/components/schemas/ValidationError"
+     },
+     "type": "array",
+     "title": "Detail"
+    }
+   },
+   "type": "object",
+   "title": "HTTPValidationError"
+  },
+  "HealthResponse": {
+   "properties": {
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "version": {
+     "type": "string",
+     "title": "Version"
+    },
+    "environment": {
+     "type": "string",
+     "title": "Environment"
+    },
+    "checks": {
+     "type": "object",
+     "title": "Checks"
+    },
+    "timestamp": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Timestamp"
+    }
+   },
+   "type": "object",
+   "required": [
+    "status",
+    "version",
+    "environment",
+    "timestamp"
+   ],
+   "title": "HealthResponse"
+  },
+  "IndexResponse": {
+   "properties": {
+    "num_documents": {
+     "type": "integer",
+     "title": "Num Documents"
+    },
+    "num_chunks": {
+     "type": "integer",
+     "title": "Num Chunks"
+    },
+    "backend": {
+     "type": "string",
+     "title": "Backend"
+    },
+    "dimension": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Dimension"
+    },
+    "duration_ms": {
+     "type": "number",
+     "title": "Duration Ms"
+    }
+   },
+   "type": "object",
+   "required": [
+    "num_documents",
+    "num_chunks",
+    "backend",
+    "duration_ms"
+   ],
+   "description": "What an index build actually produced.\n\n``dimension`` is null until the index exists, because there is no embedding\ndimension to report for an index that was not built \u2014 reporting the\nconfigured model's dimension would be a guess about a computation that has\nnot happened.",
+   "title": "IndexResponse"
+  },
+  "IngestResponse": {
+   "properties": {
+    "accepted": {
+     "type": "integer",
+     "title": "Accepted"
+    },
+    "trace_ids": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Trace Ids"
+    },
+    "errors": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Errors"
+    }
+   },
+   "type": "object",
+   "required": [
+    "accepted",
+    "trace_ids"
+   ],
+   "title": "IngestResponse"
+  },
+  "LLMCallOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "model_name": {
+     "type": "string",
+     "title": "Model Name"
+    },
+    "provider": {
+     "type": "string",
+     "title": "Provider"
+    },
+    "input_tokens": {
+     "type": "integer",
+     "title": "Input Tokens"
+    },
+    "output_tokens": {
+     "type": "integer",
+     "title": "Output Tokens"
+    },
+    "total_tokens": {
+     "type": "integer",
+     "title": "Total Tokens"
+    },
+    "latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Latency Ms"
+    },
+    "time_to_first_token_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Time To First Token Ms"
+    },
+    "estimated_cost": {
+     "type": "number",
+     "title": "Estimated Cost"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "prompt": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Prompt"
+    },
+    "completion": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Completion"
+    },
+    "temperature": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Temperature"
+    },
+    "max_tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Tokens"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "model_name",
+    "provider",
+    "input_tokens",
+    "output_tokens",
+    "total_tokens",
+    "latency_ms",
+    "time_to_first_token_ms",
+    "estimated_cost",
+    "status",
+    "prompt",
+    "completion",
+    "temperature",
+    "max_tokens",
+    "created_at"
+   ],
+   "title": "LLMCallOut"
+  },
+  "LatencyAnalytics": {
+   "properties": {
+    "window": {
+     "type": "string",
+     "title": "Window"
+    },
+    "start": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start"
+    },
+    "end": {
+     "type": "string",
+     "format": "date-time",
+     "title": "End"
+    },
+    "avg_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Avg Latency Ms"
+    },
+    "p50_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P50 Latency Ms"
+    },
+    "p95_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P95 Latency Ms"
+    },
+    "p99_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P99 Latency Ms"
+    },
+    "max_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Max Latency Ms"
+    },
+    "breakdown_by_stage": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Breakdown By Stage"
+    },
+    "breakdown_by_model": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Breakdown By Model"
+    },
+    "time_series": {
+     "items": {
+      "$ref": "#/components/schemas/TimeSeriesPoint"
+     },
+     "type": "array",
+     "title": "Time Series"
+    }
+   },
+   "type": "object",
+   "required": [
+    "window",
+    "start",
+    "end"
+   ],
+   "title": "LatencyAnalytics"
+  },
+  "MessageResponse": {
+   "properties": {
+    "message": {
+     "type": "string",
+     "title": "Message"
+    },
+    "detail": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Detail"
+    }
+   },
+   "type": "object",
+   "required": [
+    "message"
+   ],
+   "title": "MessageResponse"
+  },
+  "MetricDelta": {
+   "properties": {
+    "metric": {
+     "type": "string",
+     "title": "Metric"
+    },
+    "baseline": {
+     "type": "number",
+     "title": "Baseline"
+    },
+    "candidate": {
+     "type": "number",
+     "title": "Candidate"
+    },
+    "absolute_change": {
+     "type": "number",
+     "title": "Absolute Change"
+    },
+    "relative_change_pct": {
+     "type": "number",
+     "title": "Relative Change Pct"
+    },
+    "is_regression": {
+     "type": "boolean",
+     "title": "Is Regression"
+    },
+    "direction": {
+     "type": "string",
+     "title": "Direction",
+     "description": "higher_is_better | lower_is_better | neutral"
+    }
+   },
+   "type": "object",
+   "required": [
+    "metric",
+    "baseline",
+    "candidate",
+    "absolute_change",
+    "relative_change_pct",
+    "is_regression",
+    "direction"
+   ],
+   "title": "MetricDelta"
+  },
+  "ModelComparison": {
+   "properties": {
+    "model_name": {
+     "type": "string",
+     "title": "Model Name"
+    },
+    "provider": {
+     "type": "string",
+     "title": "Provider"
+    },
+    "call_count": {
+     "type": "integer",
+     "title": "Call Count"
+    },
+    "total_tokens": {
+     "type": "integer",
+     "title": "Total Tokens"
+    },
+    "avg_input_tokens": {
+     "type": "number",
+     "title": "Avg Input Tokens"
+    },
+    "avg_output_tokens": {
+     "type": "number",
+     "title": "Avg Output Tokens"
+    },
+    "avg_latency_ms": {
+     "type": "number",
+     "title": "Avg Latency Ms"
+    },
+    "estimated_cost": {
+     "type": "number",
+     "title": "Estimated Cost"
+    },
+    "cost_per_1k_tokens": {
+     "type": "number",
+     "title": "Cost Per 1K Tokens"
+    },
+    "cost_label": {
+     "type": "string",
+     "title": "Cost Label"
+    },
+    "is_local": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Is Local"
+    },
+    "retrieval_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Retrieval Score"
+    },
+    "faithfulness": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Faithfulness"
+    },
+    "answer_relevance": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Answer Relevance"
+    },
+    "quality_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Quality Score"
+    }
+   },
+   "type": "object",
+   "required": [
+    "model_name",
+    "provider",
+    "call_count",
+    "total_tokens",
+    "avg_input_tokens",
+    "avg_output_tokens",
+    "avg_latency_ms",
+    "estimated_cost",
+    "cost_per_1k_tokens",
+    "cost_label"
+   ],
+   "description": "One row of the cost/quality scatter plot.",
+   "title": "ModelComparison"
+  },
+  "ModelOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "provider": {
+     "type": "string",
+     "title": "Provider"
+    },
+    "context_window": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Context Window"
+    },
+    "is_local": {
+     "type": "boolean",
+     "title": "Is Local"
+    },
+    "input_cost_per_1k": {
+     "type": "number",
+     "title": "Input Cost Per 1K"
+    },
+    "output_cost_per_1k": {
+     "type": "number",
+     "title": "Output Cost Per 1K"
+    },
+    "description": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Description"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "provider",
+    "context_window",
+    "is_local",
+    "input_cost_per_1k",
+    "output_cost_per_1k",
+    "description"
+   ],
+   "title": "ModelOut"
+  },
+  "ModelUpsert": {
+   "properties": {
+    "name": {
+     "type": "string",
+     "maxLength": 128,
+     "title": "Name"
+    },
+    "provider": {
+     "type": "string",
+     "maxLength": 64,
+     "title": "Provider",
+     "default": "ollama"
+    },
+    "context_window": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Context Window"
+    },
+    "is_local": {
+     "type": "boolean",
+     "title": "Is Local",
+     "default": true
+    },
+    "input_cost_per_1k": {
+     "type": "number",
+     "minimum": 0.0,
+     "title": "Input Cost Per 1K",
+     "default": 0.0
+    },
+    "output_cost_per_1k": {
+     "type": "number",
+     "minimum": 0.0,
+     "title": "Output Cost Per 1K",
+     "default": 0.0
+    },
+    "description": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Description"
+    }
+   },
+   "type": "object",
+   "required": [
+    "name"
+   ],
+   "title": "ModelUpsert"
+  },
+  "OrganizationCreate": {
+   "properties": {
+    "name": {
+     "type": "string",
+     "maxLength": 128,
+     "minLength": 1,
+     "title": "Name",
+     "description": "Unique display name"
+    },
+    "slug": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128,
+       "minLength": 1
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Slug",
+     "description": "Optional URL-friendly handle"
+    },
+    "is_active": {
+     "type": "boolean",
+     "title": "Is Active",
+     "description": "Inactive orgs keep data but are not listed as onboardable",
+     "default": true
+    }
+   },
+   "type": "object",
+   "required": [
+    "name"
+   ],
+   "description": "A company to onboard.\n\n``name`` is unique platform-wide, which makes it the natural human handle\nfor \"the org I already created\" -- a client can test for the collision before\nsending instead of having to interpret a 409. ``slug`` is optional and\nderived from the name when omitted, because it exists for humans to read and\nnothing resolves against it.",
+   "title": "OrganizationCreate"
+  },
+  "OrganizationOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "slug": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Slug"
+    },
+    "is_active": {
+     "type": "boolean",
+     "title": "Is Active",
+     "default": true
+    },
+    "num_applications": {
+     "type": "integer",
+     "title": "Num Applications",
+     "default": 0
+    },
+    "num_api_keys": {
+     "type": "integer",
+     "title": "Num Api Keys",
+     "default": 0
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "updated_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Updated At"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "created_at",
+    "updated_at"
+   ],
+   "description": "One organization, as returned by every read.\n\n``num_applications`` and ``num_api_keys`` are counts of rows that already\nexist, not figures recomputed from telemetry, so they are cheap and exact.\n\nNot ``model_validate``-able off a row: the two counts are aggregates the\nmodel has no column for. :func:`app.api.v1.organizations.to_out` builds one\nexplicitly, which is why the mismatch is declared here rather than\ndiscovered at the first request.",
+   "title": "OrganizationOut"
+  },
+  "Page_AnomalyOut_": {
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/AnomalyOut"
+     },
+     "type": "array",
+     "title": "Items"
+    },
+    "total": {
+     "type": "integer",
+     "title": "Total",
+     "description": "Total rows matching the filter, ignoring pagination"
+    },
+    "page": {
+     "type": "integer",
+     "title": "Page"
+    },
+    "page_size": {
+     "type": "integer",
+     "title": "Page Size"
+    },
+    "has_next": {
+     "type": "boolean",
+     "title": "Has Next"
+    }
+   },
+   "type": "object",
+   "required": [
+    "items",
+    "total",
+    "page",
+    "page_size",
+    "has_next"
+   ],
+   "title": "Page[AnomalyOut]"
+  },
+  "Page_ApplicationOut_": {
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/ApplicationOut"
+     },
+     "type": "array",
+     "title": "Items"
+    },
+    "total": {
+     "type": "integer",
+     "title": "Total",
+     "description": "Total rows matching the filter, ignoring pagination"
+    },
+    "page": {
+     "type": "integer",
+     "title": "Page"
+    },
+    "page_size": {
+     "type": "integer",
+     "title": "Page Size"
+    },
+    "has_next": {
+     "type": "boolean",
+     "title": "Has Next"
+    }
+   },
+   "type": "object",
+   "required": [
+    "items",
+    "total",
+    "page",
+    "page_size",
+    "has_next"
+   ],
+   "title": "Page[ApplicationOut]"
+  },
+  "Page_EvaluationRunSummary_": {
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/EvaluationRunSummary"
+     },
+     "type": "array",
+     "title": "Items"
+    },
+    "total": {
+     "type": "integer",
+     "title": "Total",
+     "description": "Total rows matching the filter, ignoring pagination"
+    },
+    "page": {
+     "type": "integer",
+     "title": "Page"
+    },
+    "page_size": {
+     "type": "integer",
+     "title": "Page Size"
+    },
+    "has_next": {
+     "type": "boolean",
+     "title": "Has Next"
+    }
+   },
+   "type": "object",
+   "required": [
+    "items",
+    "total",
+    "page",
+    "page_size",
+    "has_next"
+   ],
+   "title": "Page[EvaluationRunSummary]"
+  },
+  "Page_ExperimentOut_": {
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/ExperimentOut"
+     },
+     "type": "array",
+     "title": "Items"
+    },
+    "total": {
+     "type": "integer",
+     "title": "Total",
+     "description": "Total rows matching the filter, ignoring pagination"
+    },
+    "page": {
+     "type": "integer",
+     "title": "Page"
+    },
+    "page_size": {
+     "type": "integer",
+     "title": "Page Size"
+    },
+    "has_next": {
+     "type": "boolean",
+     "title": "Has Next"
+    }
+   },
+   "type": "object",
+   "required": [
+    "items",
+    "total",
+    "page",
+    "page_size",
+    "has_next"
+   ],
+   "title": "Page[ExperimentOut]"
+  },
+  "Page_PerQueryResult_": {
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/PerQueryResult"
+     },
+     "type": "array",
+     "title": "Items"
+    },
+    "total": {
+     "type": "integer",
+     "title": "Total",
+     "description": "Total rows matching the filter, ignoring pagination"
+    },
+    "page": {
+     "type": "integer",
+     "title": "Page"
+    },
+    "page_size": {
+     "type": "integer",
+     "title": "Page Size"
+    },
+    "has_next": {
+     "type": "boolean",
+     "title": "Has Next"
+    }
+   },
+   "type": "object",
+   "required": [
+    "items",
+    "total",
+    "page",
+    "page_size",
+    "has_next"
+   ],
+   "title": "Page[PerQueryResult]"
+  },
+  "Page_RecommendationOut_": {
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/RecommendationOut"
+     },
+     "type": "array",
+     "title": "Items"
+    },
+    "total": {
+     "type": "integer",
+     "title": "Total",
+     "description": "Total rows matching the filter, ignoring pagination"
+    },
+    "page": {
+     "type": "integer",
+     "title": "Page"
+    },
+    "page_size": {
+     "type": "integer",
+     "title": "Page Size"
+    },
+    "has_next": {
+     "type": "boolean",
+     "title": "Has Next"
+    }
+   },
+   "type": "object",
+   "required": [
+    "items",
+    "total",
+    "page",
+    "page_size",
+    "has_next"
+   ],
+   "title": "Page[RecommendationOut]"
+  },
+  "Page_TraceSummary_": {
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "#/components/schemas/TraceSummary"
+     },
+     "type": "array",
+     "title": "Items"
+    },
+    "total": {
+     "type": "integer",
+     "title": "Total",
+     "description": "Total rows matching the filter, ignoring pagination"
+    },
+    "page": {
+     "type": "integer",
+     "title": "Page"
+    },
+    "page_size": {
+     "type": "integer",
+     "title": "Page Size"
+    },
+    "has_next": {
+     "type": "boolean",
+     "title": "Has Next"
+    }
+   },
+   "type": "object",
+   "required": [
+    "items",
+    "total",
+    "page",
+    "page_size",
+    "has_next"
+   ],
+   "title": "Page[TraceSummary]"
+  },
+  "PerQueryResult": {
+   "properties": {
+    "query": {
+     "type": "string",
+     "title": "Query"
+    },
+    "k": {
+     "type": "integer",
+     "title": "K"
+    },
+    "precision": {
+     "type": "number",
+     "title": "Precision"
+    },
+    "recall": {
+     "type": "number",
+     "title": "Recall"
+    },
+    "f1": {
+     "type": "number",
+     "title": "F1"
+    },
+    "reciprocal_rank": {
+     "type": "number",
+     "title": "Reciprocal Rank"
+    },
+    "ndcg": {
+     "type": "number",
+     "title": "Ndcg"
+    },
+    "hit": {
+     "type": "boolean",
+     "title": "Hit"
+    },
+    "retrieved_document_ids": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Retrieved Document Ids"
+    },
+    "relevant_document_ids": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Relevant Document Ids"
+    },
+    "missed_document_ids": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Missed Document Ids"
+    },
+    "latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Latency Ms"
+    }
+   },
+   "type": "object",
+   "required": [
+    "query",
+    "k",
+    "precision",
+    "recall",
+    "f1",
+    "reciprocal_rank",
+    "ndcg",
+    "hit",
+    "retrieved_document_ids",
+    "relevant_document_ids"
+   ],
+   "title": "PerQueryResult"
+  },
+  "RagQueryRequest": {
+   "properties": {
+    "query": {
+     "type": "string",
+     "maxLength": 4000,
+     "minLength": 1,
+     "title": "Query",
+     "description": "The question to ask"
+    },
+    "top_k": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "maximum": 50.0,
+       "minimum": 1.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Top K"
+    },
+    "application": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application"
+    }
+   },
+   "type": "object",
+   "required": [
+    "query"
+   ],
+   "description": "One demo question.\n\n``top_k`` and ``application`` are optional overrides; leaving them unset\nuses the configured pipeline defaults, which is what makes this endpoint a\nfaithful demo rather than a second, differently-configured pipeline.",
+   "title": "RagQueryRequest"
+  },
+  "RagQueryResponse": {
+   "properties": {
+    "trace_id": {
+     "type": "string",
+     "title": "Trace Id"
+    },
+    "answer": {
+     "type": "string",
+     "title": "Answer"
+    },
+    "documents": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Documents"
+    },
+    "usage": {
+     "type": "object",
+     "title": "Usage"
+    },
+    "timing": {
+     "additionalProperties": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "type": "object",
+     "title": "Timing"
+    },
+    "configuration": {
+     "type": "object",
+     "title": "Configuration"
+    }
+   },
+   "type": "object",
+   "required": [
+    "trace_id",
+    "answer"
+   ],
+   "description": "The answer, its sources, and what it cost.\n\n``usage`` distinguishes the three token counts the pipeline actually\ndistinguishes: what the model was sent, what it produced, and what the\nretrieved context alone occupied. Collapsing them loses the one number an\noperator needs to tell \"the model is verbose\" from \"we are stuffing the\nprompt\".",
+   "title": "RagQueryResponse"
+  },
+  "RecommendationGenerateRequest": {
+   "properties": {
+    "application": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application"
+    },
+    "window": {
+     "type": "string",
+     "title": "Window",
+     "default": "7d"
+    },
+    "persist": {
+     "type": "boolean",
+     "title": "Persist",
+     "default": true
+    },
+    "min_severity": {
+     "type": "number",
+     "maximum": 1.0,
+     "minimum": 0.0,
+     "title": "Min Severity",
+     "default": 0.0
+    }
+   },
+   "type": "object",
+   "title": "RecommendationGenerateRequest"
+  },
+  "RecommendationGenerateResponse": {
+   "properties": {
+    "generated": {
+     "type": "integer",
+     "title": "Generated"
+    },
+    "recommendations": {
+     "items": {
+      "$ref": "#/components/schemas/RecommendationOut"
+     },
+     "type": "array",
+     "title": "Recommendations"
+    },
+    "notes": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Notes"
+    },
+    "rules_evaluated": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Rules Evaluated"
+    }
+   },
+   "type": "object",
+   "required": [
+    "generated"
+   ],
+   "description": "Result of a generation request.\n\n``notes`` is not decoration. A response of ``generated: 0`` with no\nexplanation is indistinguishable from \"we looked and found nothing to\nimprove\", and those two are very different things to show a user. The note\nis where the route says which one this is.\n\n``rules_evaluated`` closes the remaining gap: it reports every rule that ran\nand the measurement it looked at, including the ones that stayed below\ntheir threshold. A caller can then see that \"no recommendation\" means \"six\nstatistics were computed and none justified one\", rather than having to\ntrust that something happened at all.",
+   "title": "RecommendationGenerateResponse"
+  },
+  "RecommendationOut": {
+   "properties": {
+    "id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Id"
+    },
+    "application_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Id"
+    },
+    "application_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Name"
+    },
+    "category": {
+     "type": "string",
+     "title": "Category"
+    },
+    "title": {
+     "type": "string",
+     "title": "Title"
+    },
+    "rationale": {
+     "type": "string",
+     "title": "Rationale"
+    },
+    "recommendation": {
+     "type": "string",
+     "title": "Recommendation"
+    },
+    "priority": {
+     "type": "string",
+     "title": "Priority"
+    },
+    "severity_score": {
+     "type": "number",
+     "title": "Severity Score"
+    },
+    "evidence": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Evidence"
+    },
+    "metrics": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Metrics"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "confidence": {
+     "type": "number",
+     "title": "Confidence"
+    },
+    "created_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Created At"
+    }
+   },
+   "type": "object",
+   "required": [
+    "application_id",
+    "category",
+    "title",
+    "rationale",
+    "recommendation",
+    "priority",
+    "severity_score",
+    "evidence",
+    "metrics",
+    "status",
+    "confidence"
+   ],
+   "title": "RecommendationOut"
+  },
+  "RegressionReport": {
+   "properties": {
+    "baseline_run_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Baseline Run Id"
+    },
+    "candidate_run_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Candidate Run Id"
+    },
+    "baseline_name": {
+     "type": "string",
+     "title": "Baseline Name"
+    },
+    "candidate_name": {
+     "type": "string",
+     "title": "Candidate Name"
+    },
+    "deltas": {
+     "items": {
+      "$ref": "#/components/schemas/MetricDelta"
+     },
+     "type": "array",
+     "title": "Deltas"
+    },
+    "config_differences": {
+     "items": {
+      "$ref": "#/components/schemas/ConfigDifference"
+     },
+     "type": "array",
+     "title": "Config Differences"
+    },
+    "has_regression": {
+     "type": "boolean",
+     "title": "Has Regression"
+    },
+    "regression_summary": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Regression Summary"
+    },
+    "contributing_config_changes": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Contributing Config Changes"
+    }
+   },
+   "type": "object",
+   "required": [
+    "baseline_run_id",
+    "candidate_run_id",
+    "baseline_name",
+    "candidate_name",
+    "has_regression"
+   ],
+   "title": "RegressionReport"
+  },
+  "RetrievalEvaluationRequest": {
+   "properties": {
+    "name": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 255
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Name"
+    },
+    "application": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application"
+    },
+    "dataset_name": {
+     "type": "string",
+     "maxLength": 255,
+     "title": "Dataset Name",
+     "default": "retrieval_eval"
+    },
+    "k": {
+     "type": "integer",
+     "maximum": 50.0,
+     "minimum": 1.0,
+     "title": "K",
+     "default": 5
+    },
+    "ks": {
+     "items": {
+      "type": "integer"
+     },
+     "type": "array",
+     "title": "Ks",
+     "description": "Additional K values to report"
+    },
+    "examples": {
+     "anyOf": [
+      {
+       "items": {
+        "$ref": "#/components/schemas/EvalExample"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Examples"
+    },
+    "load_from_path": {
+     "type": "boolean",
+     "title": "Load From Path",
+     "default": true
+    },
+    "config_override": {
+     "type": "object",
+     "title": "Config Override"
+    },
+    "persist": {
+     "type": "boolean",
+     "title": "Persist",
+     "default": true
+    }
+   },
+   "type": "object",
+   "description": "Run retrieval metrics over a labelled dataset.\n\nEither point at an existing ``application`` (which runs the real retriever)\nor supply ``retrieved_document_ids`` per example to score a result set that\nwas produced elsewhere. The second form is what evaluates a production\ntrace log without re-running retrieval.",
+   "title": "RetrievalEvaluationRequest"
+  },
+  "RetrievalIn": {
+   "properties": {
+    "query": {
+     "type": "string",
+     "maxLength": 8000,
+     "minLength": 1,
+     "title": "Query"
+    },
+    "retriever": {
+     "type": "string",
+     "maxLength": 64,
+     "title": "Retriever",
+     "default": "hybrid"
+    },
+    "top_k": {
+     "type": "integer",
+     "maximum": 100.0,
+     "minimum": 1.0,
+     "title": "Top K",
+     "default": 5
+    },
+    "documents": {
+     "items": {
+      "$ref": "#/components/schemas/RetrievedDocumentIn"
+     },
+     "type": "array",
+     "title": "Documents"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "timestamp": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Timestamp",
+     "description": "When the retrieval ran. Defaults to the server's insert time, which is correct for live traffic but collapses a backfilled or replayed batch into one instant. State it when replaying history."
+    },
+    "configuration": {
+     "type": "object",
+     "title": "Configuration"
+    }
+   },
+   "type": "object",
+   "required": [
+    "query"
+   ],
+   "description": "A retrieval stage attached to a trace.",
+   "title": "RetrievalIn"
+  },
+  "RetrievalOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "query": {
+     "type": "string",
+     "title": "Query"
+    },
+    "retriever": {
+     "type": "string",
+     "title": "Retriever"
+    },
+    "top_k": {
+     "type": "integer",
+     "title": "Top K"
+    },
+    "num_results": {
+     "type": "integer",
+     "title": "Num Results"
+    },
+    "latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Latency Ms"
+    },
+    "context_tokens": {
+     "type": "integer",
+     "title": "Context Tokens"
+    },
+    "top_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Top Score"
+    },
+    "configuration": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Configuration"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "documents": {
+     "items": {
+      "$ref": "#/components/schemas/RetrievedDocumentOut"
+     },
+     "type": "array",
+     "title": "Documents"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "query",
+    "retriever",
+    "top_k",
+    "num_results",
+    "latency_ms",
+    "context_tokens",
+    "top_score",
+    "configuration",
+    "created_at"
+   ],
+   "title": "RetrievalOut"
+  },
+  "RetrievedDocumentIn": {
+   "properties": {
+    "document_id": {
+     "type": "string",
+     "maxLength": 255,
+     "title": "Document Id"
+    },
+    "title": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 512
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Title"
+    },
+    "rank": {
+     "type": "integer",
+     "minimum": 1.0,
+     "title": "Rank"
+    },
+    "final_score": {
+     "type": "number",
+     "title": "Final Score",
+     "default": 0.0
+    },
+    "bm25_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Bm25 Score"
+    },
+    "vector_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Vector Score"
+    },
+    "rerank_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Rerank Score"
+    },
+    "content": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Content",
+     "description": "Full text; truncated server-side for storage"
+    },
+    "content_preview": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Content Preview"
+    }
+   },
+   "type": "object",
+   "required": [
+    "document_id",
+    "rank"
+   ],
+   "description": "One ranked retrieval hit.\n\nPer-stage scores are optional but recommended: they are what lets the trace\nview explain a ranking, and what the duplicate-context detector keys on.",
+   "title": "RetrievedDocumentIn"
+  },
+  "RetrievedDocumentOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "document_id": {
+     "type": "string",
+     "title": "Document Id"
+    },
+    "title": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Title"
+    },
+    "rank": {
+     "type": "integer",
+     "title": "Rank"
+    },
+    "final_score": {
+     "type": "number",
+     "title": "Final Score"
+    },
+    "bm25_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Bm25 Score"
+    },
+    "vector_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Vector Score"
+    },
+    "rerank_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Rerank Score"
+    },
+    "token_count": {
+     "type": "integer",
+     "title": "Token Count"
+    },
+    "content_preview": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Content Preview"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "document_id",
+    "title",
+    "rank",
+    "final_score",
+    "bm25_score",
+    "vector_score",
+    "rerank_score",
+    "token_count",
+    "content_preview"
+   ],
+   "title": "RetrievedDocumentOut"
+  },
+  "SpanIn": {
+   "properties": {
+    "name": {
+     "type": "string",
+     "maxLength": 128,
+     "title": "Name"
+    },
+    "kind": {
+     "type": "string",
+     "enum": [
+      "retrieval",
+      "embedding",
+      "rerank",
+      "llm",
+      "tool",
+      "agent_step",
+      "other"
+     ],
+     "title": "Kind",
+     "default": "other"
+    },
+    "start_time": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Start Time"
+    },
+    "end_time": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "End Time"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "status": {
+     "type": "string",
+     "enum": [
+      "success",
+      "error",
+      "running",
+      "cancelled"
+     ],
+     "title": "Status",
+     "default": "success"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Error"
+    },
+    "attributes": {
+     "type": "object",
+     "title": "Attributes"
+    }
+   },
+   "type": "object",
+   "required": [
+    "name"
+   ],
+   "description": "A timed stage inside a trace.",
+   "title": "SpanIn"
+  },
+  "SpanOut": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "name": {
+     "type": "string",
+     "title": "Name"
+    },
+    "kind": {
+     "type": "string",
+     "title": "Kind"
+    },
+    "start_time": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start Time"
+    },
+    "end_time": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "End Time"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Error"
+    },
+    "attributes": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Attributes"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "kind",
+    "start_time",
+    "end_time",
+    "duration_ms",
+    "status",
+    "error",
+    "attributes"
+   ],
+   "title": "SpanOut"
+  },
+  "TimeSeriesPoint": {
+   "properties": {
+    "bucket": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Bucket"
+    },
+    "request_count": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Request Count"
+    },
+    "error_count": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Error Count"
+    },
+    "input_tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Input Tokens"
+    },
+    "output_tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Output Tokens"
+    },
+    "total_tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Total Tokens"
+    },
+    "estimated_cost": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Estimated Cost"
+    },
+    "avg_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Avg Latency Ms"
+    },
+    "p50_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P50 Latency Ms"
+    },
+    "p95_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P95 Latency Ms"
+    },
+    "p99_latency_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P99 Latency Ms"
+    },
+    "avg_retrieval_score": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Avg Retrieval Score"
+    },
+    "avg_faithfulness": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Avg Faithfulness"
+    },
+    "avg_answer_relevance": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Avg Answer Relevance"
+    }
+   },
+   "type": "object",
+   "required": [
+    "bucket"
+   ],
+   "description": "One bucket of a time series.\n\n``bucket`` is ISO-8601 UTC. Metrics are ``None`` rather than 0 for empty\nbuckets so the UI can break the line instead of drawing a false drop to zero.",
+   "title": "TimeSeriesPoint"
+  },
+  "TokenAnalytics": {
+   "properties": {
+    "window": {
+     "type": "string",
+     "title": "Window"
+    },
+    "start": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start"
+    },
+    "end": {
+     "type": "string",
+     "format": "date-time",
+     "title": "End"
+    },
+    "total_tokens": {
+     "type": "integer",
+     "title": "Total Tokens"
+    },
+    "input_tokens": {
+     "type": "integer",
+     "title": "Input Tokens"
+    },
+    "output_tokens": {
+     "type": "integer",
+     "title": "Output Tokens"
+    },
+    "avg_tokens_per_request": {
+     "type": "number",
+     "title": "Avg Tokens Per Request"
+    },
+    "p50_tokens": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P50 Tokens"
+    },
+    "p95_tokens": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P95 Tokens"
+    },
+    "p99_tokens": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "P99 Tokens"
+    },
+    "max_tokens": {
+     "type": "integer",
+     "title": "Max Tokens"
+    },
+    "cost_per_request": {
+     "type": "number",
+     "title": "Cost Per Request"
+    },
+    "total_cost": {
+     "type": "number",
+     "title": "Total Cost"
+    },
+    "cost_label": {
+     "type": "string",
+     "title": "Cost Label"
+    },
+    "tokens_per_user": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Tokens Per User"
+    },
+    "tokens_per_application": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Tokens Per Application"
+    },
+    "tokens_per_model": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Tokens Per Model"
+    },
+    "time_series": {
+     "items": {
+      "$ref": "#/components/schemas/TimeSeriesPoint"
+     },
+     "type": "array",
+     "title": "Time Series"
+    }
+   },
+   "type": "object",
+   "required": [
+    "window",
+    "start",
+    "end",
+    "total_tokens",
+    "input_tokens",
+    "output_tokens",
+    "avg_tokens_per_request",
+    "max_tokens",
+    "cost_per_request",
+    "total_cost",
+    "cost_label"
+   ],
+   "title": "TokenAnalytics"
+  },
+  "TokenEfficiencyReport": {
+   "properties": {
+    "window": {
+     "type": "string",
+     "title": "Window"
+    },
+    "start": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start"
+    },
+    "end": {
+     "type": "string",
+     "format": "date-time",
+     "title": "End"
+    },
+    "score": {
+     "type": "number",
+     "title": "Score",
+     "description": "0-100 token efficiency score"
+    },
+    "potential_waste_pct": {
+     "type": "number",
+     "title": "Potential Waste Pct"
+    },
+    "wasted_tokens": {
+     "type": "number",
+     "title": "Wasted Tokens",
+     "description": "Mean measured wasted tokens per scored request"
+    },
+    "total_input_tokens": {
+     "type": "integer",
+     "title": "Total Input Tokens"
+    },
+    "duplicate_document_count": {
+     "type": "number",
+     "title": "Duplicate Document Count",
+     "description": "Mean duplicated retrieved documents per scored request"
+    },
+    "avg_context_share": {
+     "type": "number",
+     "title": "Avg Context Share"
+    },
+    "avg_output_yield": {
+     "type": "number",
+     "title": "Avg Output Yield"
+    },
+    "waste_by_application": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Waste By Application"
+    },
+    "top_offenders": {
+     "items": {
+      "type": "object"
+     },
+     "type": "array",
+     "title": "Top Offenders"
+    },
+    "findings": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Findings"
+    }
+   },
+   "type": "object",
+   "required": [
+    "window",
+    "start",
+    "end",
+    "score",
+    "potential_waste_pct",
+    "wasted_tokens",
+    "total_input_tokens",
+    "duplicate_document_count",
+    "avg_context_share",
+    "avg_output_yield"
+   ],
+   "description": "Aggregate token-waste analysis for a window.",
+   "title": "TokenEfficiencyReport"
+  },
+  "TraceCreate": {
+   "properties": {
+    "trace_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 64
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Trace Id"
+    },
+    "application": {
+     "type": "string",
+     "maxLength": 128,
+     "title": "Application",
+     "description": "Application name"
+    },
+    "user_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 255
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "User Id"
+    },
+    "session_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Session Id"
+    },
+    "kind": {
+     "type": "string",
+     "enum": [
+      "chat",
+      "rag",
+      "agent",
+      "evaluation"
+     ],
+     "title": "Kind",
+     "default": "rag"
+    },
+    "name": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 255
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Name"
+    },
+    "start_time": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Start Time"
+    },
+    "end_time": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "End Time"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number",
+       "minimum": 0.0
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "input_text": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 100000
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Input Text"
+    },
+    "output_text": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 100000
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Output Text"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Error"
+    },
+    "status": {
+     "type": "string",
+     "enum": [
+      "success",
+      "error",
+      "running",
+      "cancelled"
+     ],
+     "title": "Status",
+     "default": "running"
+    },
+    "agent_name": {
+     "anyOf": [
+      {
+       "type": "string",
+       "maxLength": 128
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Agent Name"
+    },
+    "agent_iterations": {
+     "type": "integer",
+     "minimum": 0.0,
+     "title": "Agent Iterations",
+     "default": 0
+    },
+    "context_tokens": {
+     "type": "integer",
+     "minimum": 0.0,
+     "title": "Context Tokens",
+     "default": 0
+    },
+    "tags": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "title": "Tags"
+    },
+    "metadata": {
+     "type": "object",
+     "title": "Metadata"
+    },
+    "spans": {
+     "items": {
+      "$ref": "#/components/schemas/SpanIn"
+     },
+     "type": "array",
+     "title": "Spans"
+    },
+    "retrievals": {
+     "items": {
+      "$ref": "#/components/schemas/RetrievalIn"
+     },
+     "type": "array",
+     "title": "Retrievals"
+    },
+    "generations": {
+     "items": {
+      "$ref": "#/components/schemas/GenerationIn"
+     },
+     "type": "array",
+     "title": "Generations"
+    }
+   },
+   "type": "object",
+   "required": [
+    "application"
+   ],
+   "description": "Create (or upsert) a trace.\n\n``trace_id`` is caller-supplied so an application can correlate its own\nrequest id with the RAGOps trace without a second round trip.",
+   "title": "TraceCreate"
+  },
+  "TraceDetail": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "trace_id": {
+     "type": "string",
+     "title": "Trace Id"
+    },
+    "application_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Application Id"
+    },
+    "application_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Name"
+    },
+    "user_id": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "uuid"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "User Id"
+    },
+    "user_external_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "User External Id"
+    },
+    "session_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Session Id"
+    },
+    "kind": {
+     "type": "string",
+     "title": "Kind"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Name"
+    },
+    "start_time": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start Time"
+    },
+    "end_time": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "End Time"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "input_text": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Input Text"
+    },
+    "output_text": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Output Text"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Error"
+    },
+    "total_tokens": {
+     "type": "integer",
+     "title": "Total Tokens"
+    },
+    "input_tokens": {
+     "type": "integer",
+     "title": "Input Tokens",
+     "default": 0
+    },
+    "output_tokens": {
+     "type": "integer",
+     "title": "Output Tokens",
+     "default": 0
+    },
+    "estimated_cost": {
+     "type": "number",
+     "title": "Estimated Cost"
+    },
+    "context_tokens": {
+     "type": "integer",
+     "title": "Context Tokens"
+    },
+    "agent_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Agent Name"
+    },
+    "agent_iterations": {
+     "type": "integer",
+     "title": "Agent Iterations"
+    },
+    "tags": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Tags"
+    },
+    "metadata": {
+     "anyOf": [
+      {
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Metadata"
+    },
+    "created_at": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Created At"
+    },
+    "spans": {
+     "items": {
+      "$ref": "#/components/schemas/SpanOut"
+     },
+     "type": "array",
+     "title": "Spans"
+    },
+    "retrievals": {
+     "items": {
+      "$ref": "#/components/schemas/RetrievalOut"
+     },
+     "type": "array",
+     "title": "Retrievals"
+    },
+    "llm_calls": {
+     "items": {
+      "$ref": "#/components/schemas/LLMCallOut"
+     },
+     "type": "array",
+     "title": "Llm Calls"
+    },
+    "retrieval_analysis": {
+     "type": "object",
+     "title": "Retrieval Analysis"
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "trace_id",
+    "application_id",
+    "user_id",
+    "user_external_id",
+    "session_id",
+    "kind",
+    "status",
+    "name",
+    "start_time",
+    "end_time",
+    "duration_ms",
+    "input_text",
+    "output_text",
+    "error",
+    "total_tokens",
+    "estimated_cost",
+    "context_tokens",
+    "agent_name",
+    "agent_iterations",
+    "tags",
+    "metadata",
+    "created_at"
+   ],
+   "description": "Full trace including nested spans, retrievals and generations.",
+   "title": "TraceDetail"
+  },
+  "TraceSummary": {
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Id"
+    },
+    "trace_id": {
+     "type": "string",
+     "title": "Trace Id"
+    },
+    "application_id": {
+     "type": "string",
+     "format": "uuid",
+     "title": "Application Id"
+    },
+    "application_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Application Name"
+    },
+    "user_external_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "User External Id"
+    },
+    "session_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Session Id"
+    },
+    "kind": {
+     "type": "string",
+     "title": "Kind"
+    },
+    "status": {
+     "type": "string",
+     "title": "Status"
+    },
+    "name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Name"
+    },
+    "start_time": {
+     "type": "string",
+     "format": "date-time",
+     "title": "Start Time"
+    },
+    "end_time": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "End Time"
+    },
+    "duration_ms": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Duration Ms"
+    },
+    "total_tokens": {
+     "type": "integer",
+     "title": "Total Tokens"
+    },
+    "estimated_cost": {
+     "type": "number",
+     "title": "Estimated Cost"
+    },
+    "context_tokens": {
+     "type": "integer",
+     "title": "Context Tokens"
+    },
+    "agent_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Agent Name"
+    },
+    "agent_iterations": {
+     "type": "integer",
+     "title": "Agent Iterations"
+    },
+    "input_preview": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Input Preview"
+    },
+    "has_error": {
+     "type": "boolean",
+     "title": "Has Error",
+     "default": false
+    }
+   },
+   "type": "object",
+   "required": [
+    "id",
+    "trace_id",
+    "application_id",
+    "user_external_id",
+    "session_id",
+    "kind",
+    "status",
+    "name",
+    "start_time",
+    "end_time",
+    "duration_ms",
+    "total_tokens",
+    "estimated_cost",
+    "context_tokens",
+    "agent_name",
+    "agent_iterations"
+   ],
+   "description": "Row shape in the trace list. Deliberately excludes prompt/completion\ntext, which would make listing traces expensive.",
+   "title": "TraceSummary"
+  },
+  "ValidationError": {
+   "properties": {
+    "loc": {
+     "items": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "integer"
+       }
+      ]
+     },
+     "type": "array",
+     "title": "Location"
+    },
+    "msg": {
+     "type": "string",
+     "title": "Message"
+    },
+    "type": {
+     "type": "string",
+     "title": "Error Type"
+    }
+   },
+   "type": "object",
+   "required": [
+    "loc",
+    "msg",
+    "type"
+   ],
+   "title": "ValidationError"
+  }
+ }
+}

@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * The colour system for the RAGOps console.
+ *
+ * Every colour is a space-separated RGB triplet so Tailwind can apply opacity
+ * (`withAlpha` in tailwind.config.js). The chart wrappers read these same
+ * variables through `getComputedStyle`, which is why dark mode needs no
+ * duplicated palette in JavaScript.
+ */
+
+:root,
+.dark {
+  color-scheme: dark;
+
+  --surface-page: 11 14 20;
+  --surface-1: 17 21 30;
+  --surface-2: 23 28 39;
+  --surface-3: 31 37 50;
+
+  --text-primary: 226 232 240;
+  --text-secondary: 148 163 184;
+  --text-muted: 100 116 139;
+  --text-inverse: 15 18 24;
+
+  --border-subtle: 39 46 61;
+  --border-strong: 60 69 88;
+  --chart-grid: 45 53 70;
+
+  --brand: 99 102 241;
+  --brand-hover: 129 140 248;
+  --brand-soft: 55 48 163;
+  --brand-fg: 255 255 255;
+
+  --status-good: 34 197 94;
+  --status-warning: 234 179 8;
+  --status-serious: 249 115 22;
+  --status-critical: 239 68 68;
+
+  --chart-series-1: 56 189 248;
+  --chart-series-2: 52 211 153;
+  --chart-series-3: 251 191 36;
+  --chart-series-4: 167 139 250;
+  --chart-series-5: 244 114 182;
+  --chart-series-6: 45 212 191;
+  --chart-series-7: 251 146 60;
+  --chart-series-8: 163 230 53;
+
+  /**
+   * Validated categorical palette.
+   *
+   * `--chart-series-*` above is the original brand ramp and is left in place
+   * for anything already bound to it. Charts themselves read `--viz-*`, which
+   * is a per-mode re-step run through the data-viz validator: adjacent-pair
+   * CVD ΔE 8.4 worst case in this mode, and every slot clears 3:1 against the
+   * dark surface. The first three slots are the only ones that also validate
+   * all-pairs, which is why scatter and heatmap cap their series count there.
+   */
+  --viz-1: 57 135 229;
+  --viz-2: 217 89 38;
+  --viz-3: 25 158 112;
+  --viz-4: 201 133 0;
+  --viz-5: 213 81 129;
+  --viz-6: 0 131 0;
+  --viz-7: 144 133 233;
+  --viz-8: 230 103 103;
+}
+
+html:not(.dark) {
+  color-scheme: light;
+
+  --surface-page: 248 250 252;
+  --surface-1: 255 255 255;
+  --surface-2: 244 246 250;
+  --surface-3: 232 236 243;
+
+  --text-primary: 15 23 42;
+  --text-secondary: 71 85 105;
+  --text-muted: 100 116 139;
+  --text-inverse: 255 255 255;
+
+  --border-subtle: 226 232 240;
+  --border-strong: 203 213 225;
+  --chart-grid: 226 232 240;
+
+  --brand: 79 70 229;
+  --brand-hover: 67 56 202;
+  --brand-soft: 224 231 255;
+  --brand-fg: 255 255 255;
+
+  --status-good: 22 163 74;
+  --status-warning: 202 138 4;
+  --status-serious: 234 88 12;
+  --status-critical: 220 38 38;
+
+  --chart-series-1: 2 132 199;
+  --chart-series-2: 5 150 105;
+  --chart-series-3: 202 138 4;
+  --chart-series-4: 124 58 237;
+  --chart-series-5: 219 39 119;
+  --chart-series-6: 13 148 136;
+  --chart-series-7: 234 88 12;
+  --chart-series-8: 77 124 15;
+
+  /** Validated light-mode steps. Adjacent-pair CVD ΔE 9.1 worst case. */
+  --viz-1: 42 120 214;
+  --viz-2: 235 104 52;
+  --viz-3: 27 175 122;
+  --viz-4: 237 161 0;
+  --viz-5: 232 123 164;
+  --viz-6: 0 131 0;
+  --viz-7: 74 58 167;
+  --viz-8: 227 73 72;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-surface-page text-ink;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-surface-page;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-card border border-line bg-surface shadow-sm;
+  }
+
+  .field-label {
+    @apply mb-1 block text-xs font-medium text-ink-secondary;
+  }
+
+  .field-input {
+    @apply w-full rounded-md border border-line bg-surface px-2.5 py-1.5 text-sm text-ink
+      placeholder:text-ink-muted focus:border-brand focus:outline-none;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5
+      text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand text-brand-fg hover:bg-brand-hover;
+  }
+
+  .btn-secondary {
+    @apply btn border border-line bg-surface text-ink hover:bg-surface-raised;
+  }
+
+  .btn-ghost {
+    @apply btn text-ink-secondary hover:bg-surface-raised hover:text-ink;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-line px-2 py-0.5 text-2xs font-medium;
+  }
+
+  /* A value the API did not record. Never used to stand in for a real zero. */
+  .no-value {
+    @apply text-ink-muted;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}

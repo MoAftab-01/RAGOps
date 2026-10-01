@@ -1,0 +1,134 @@
+# ==============================================================================
+# Secrets — this is the section §39's "no secrets are committed" rests on.
+# ==============================================================================
+# .env holds the API key and the database password. It is never committed, and
+# .env.example (which holds no real values) is what is.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+secrets/
+!.github/CODEOWNERS
+
+# ==============================================================================
+# Python
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# Testing and type checking caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.cache
+nosetests.xml
+.hypothesis/
+
+# ==============================================================================
+# Node / frontend
+# ==============================================================================
+node_modules/
+frontend/node_modules/
+.pnpm-store/
+.yarn/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+*.tsbuildinfo
+
+# ==============================================================================
+# Local data — databases, indexes, caches
+# ==============================================================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+data/
+!data/.gitkeep
+*.faiss
+*.pkl
+*.pickle
+*.npy
+*.npz
+faiss_index/
+qdrant_storage/
+
+# ==============================================================================
+# Logs and process output
+# ==============================================================================
+*.log
+logs/
+*.out
+*.err
+api*.out.log
+api*.err.log
+uvicorn*.log
+
+# ==============================================================================
+# Editor and OS
+# ==============================================================================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================================================================
+# Agent and workflow scratch directories
+# ==============================================================================
+.work/
+.tmpwork/
+.workflow-*.js
+
+# Captured API responses used to diff a change's output against a stored
+# baseline. Roughly 3.6 MB of synthetic demo traces, useful only while the
+# comparison is in progress, and stale the moment the schema moves.
+.actual/
+.baseline/
